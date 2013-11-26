@@ -7,10 +7,11 @@
 
 <?php 
 
-      echo "<pre>"; 
-      print_r($_POST);
-      echo "</pre> <br><br> "; 
-      // die();
+      // echo "<pre>"; 
+      // print_r($_POST);
+      // echo "</pre> <br><br> "; 
+      // // die();
+
 
 // verifica se já existe o numero limite de consultas para uma determinada especialidade
  // numa determinada data, em determinada hora e em determinado horario
