@@ -1,0 +1,48 @@
+ Na realização do trabalho os alunos têm de conceber e implementar uma base de dados com uma complexidade mínima de seis tabelas e usar pelo menos:
+
+         ✔ uma vez Subconsultas e @done (13-11-21 20:26)
+         ✔ Vistas @done (13-11-21 20:26)
+
+e ainda os comandos, cláusulas, operadores e funções seguintes:
+ 
+Comandos:  
+ ✔ CREATE @done (13-11-21 20:23)
+ ✔ USE (está implícito já) @done (13-11-21 20:23)
+ ✔ DROP @done (13-11-21 20:23)
+ ✔ INSERT @done (13-11-21 20:23)
+ ✔ UPDATE @done (13-11-21 20:23)
+ ✔ DELETE @done (13-11-21 20:23)
+ ✔ SELECT @done (13-11-21 20:23)
+
+ ✔ ALTER @done (13-11-26 17:37)
+                      ALTER TABLE `projecto_clinica`.`medicos` 
+                      ADD COLUMN `salario_mensal` DECIMAL(7,2) NOT NULL AFTER `horarios_id`;
+
+☐ JOIN
+
+
+Cláusulas:  
+ ✔ FROM @done (13-11-21 20:25)
+ ✔ WHERE @done (13-11-21 20:25)
+ ✔ ON DELETE CASCADE ou ON UPDATE CASCADE @done (13-11-26 17:40)
+ ✔ ORDER BY @done (13-11-21 20:25)
+ ☐ GROUP BY
+ ☐ DISTINCT
+ ☐ BETWEEN
+
+Operadores: 
+ ✔ AND @done (13-11-21 20:25)
+ ✔ OR @done (13-11-21 20:25)
+ ✔ NOT @done (13-11-21 20:25)
+ ✔ IN @done (13-11-21 20:25)
+ ☐ LIKE
+ ☐ UNION
+ ☐ INTERSECT
+
+Tentar usar isto com os salários dos médicos (para isso vou ter de adicionar um campo "salário mensal" à tabela médicos)
+Funções: 
+ ✔ COUNT @done (13-11-21 20:25)
+ ✔ SUM @done (13-11-26 17:33)
+ ✔ AVG @done (13-11-26 17:33)
+ ✔ MAX @done (13-11-26 17:33)
+ ✔ MIN @done (13-11-26 17:33)

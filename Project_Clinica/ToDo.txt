@@ -1,0 +1,15 @@
+
+REVER TODO O PROJECTO E REFAZER COMENTÁRIOS SOBRE CADA FICHEIRO PARA DEPOIS COLOCAR NO RELATÓRIO
+
+
+===============================================================
+TENTAR MUDAR A QUERY DO FORMULARIO DE MARCAÇAO DE CONSULTAS
+
+===============================================================
+PREENCHER TABELAS COM DADOS!!!
+
+
+===============================================================
+NO FIM DE TUDO:
+			-> encontrar imagens
+
