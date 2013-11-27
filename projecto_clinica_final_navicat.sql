@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-11-26 20:48:05
+Date: 2013-11-27 09:21:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `administradores` (
 -- ----------------------------
 -- Records of administradores
 -- ----------------------------
-INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-26 17:50:52');
+INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-26 17:32:32');
 INSERT INTO `administradores` VALUES ('2', 'super user', 'secret', '2013-11-12 20:31:39');
 
 -- ----------------------------
@@ -76,24 +76,20 @@ CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
   `hora_consulta` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `medicos_id` int(10) unsigned NOT NULL,
   `utentes_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `especialidades_id` int(10) unsigned NOT NULL,
-  `horarios_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1_idx` (`medicos_id`),
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
-  KEY `fk_consultas_com_marcacao_confirmada_a_realizar_especialida_idx` (`especialidades_id`),
-  KEY `fk_consultas_com_marcacao_confirmada_a_realizar_horarios1_idx` (`horarios_id`),
-  CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_especialidades1` FOREIGN KEY (`especialidades_id`) REFERENCES `especialidades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_horarios1` FOREIGN KEY (`horarios_id`) REFERENCES `horarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_com_marcacao_confirmada_a_realizar
 -- ----------------------------
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('5', '2013-11-15 21:09:24', '11/25/2033', '14:30', '3', 'pedro@fonseca.com', '4', '1');
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('6', '2013-11-15 21:00:01', '11/20/2013', '14:30', '22', 'pedrogil@fonseca.com', '9', '2');
+INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('14', '2013-11-26 23:56:59', '11/30/2013', '14:00', '1', 'jricvalerio@gmail.com');
+INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('16', '2013-11-27 08:54:04', '11/30/2013', '14:00', '13', 'jricvalerio@gmail.com');
+INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('17', '2013-11-27 09:13:57', '12/18/2013', '14:00', '1', 'jose@TESTE.com');
+INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('18', '2013-11-27 09:16:41', '12/18/2013', '14:00', '13', 'teste@teste.com');
 
 -- ----------------------------
 -- Table structure for consultas_realizadas
@@ -259,7 +255,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 -- ----------------------------
 -- Records of medicos_administracao_de_consultas
 -- ----------------------------
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor', 'secret', '2013-11-26 14:43:09', '15');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor', 'secret', '2013-11-27 09:19:05', '15');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('2', 'doctora', 'secret', '2013-11-23 20:41:35', '26');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'stupid', 'secretinho', '0000-00-00 00:00:00', '30');
 
@@ -301,6 +297,8 @@ CREATE TABLE `utentes` (
 -- ----------------------------
 INSERT INTO `utentes` VALUES ('catarina18@gmail.com', 'Catarina', 'Neto', 'Avenida Masterchef Sofá 3ºlugar', '932415161', '2013-11-12 22:17:13');
 INSERT INTO `utentes` VALUES ('jose@TEST.com', 'José', 'Sousa', 'Rua do José Sousa', '968986868', '2013-11-23 21:27:58');
+INSERT INTO `utentes` VALUES ('jose@TESTE.com', 'TESTE', 'TESTE', 'RUA TESTE', '952545246', '2013-11-26 23:33:37');
+INSERT INTO `utentes` VALUES ('jricvalerio@gmail.com', 'Joana', 'Serafim', 'Rua Particular à Estrada da Cruz Nº236', '952545246', '2013-11-26 23:04:58');
 INSERT INTO `utentes` VALUES ('maria45@hotmail.com', 'Maria', 'Sousa', 'Rua Particular à Estrada da Cruz nº 212', '961234321', '2013-11-12 22:13:47');
 INSERT INTO `utentes` VALUES ('migueltavares@gmail.com', 'Miguel', 'Tavares', 'Avenida João Garcia Nº 35 2º Esq', '912387456', '2013-11-12 22:15:34');
 INSERT INTO `utentes` VALUES ('pedro@fonseca.com', 'Pedro', 'Fonseca', 'Rua da Rua nº4 Loulé', '917547647', '2013-11-15 21:50:58');

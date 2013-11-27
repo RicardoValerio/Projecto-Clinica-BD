@@ -115,9 +115,7 @@
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[2]; ?></td>   
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[3]; ?></td>   
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[4]; ?></td>   
-                  <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>   
-                  <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[6]; ?></td>   
-                  <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[7]; ?></td>
+                  <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>
                 </tr>
                      
           <?php 

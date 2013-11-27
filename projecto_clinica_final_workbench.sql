@@ -83,18 +83,12 @@ CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
   `hora_consulta` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `medicos_id` int(10) unsigned NOT NULL,
   `utentes_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `especialidades_id` int(10) unsigned NOT NULL,
-  `horarios_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1_idx` (`medicos_id`),
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
-  KEY `fk_consultas_com_marcacao_confirmada_a_realizar_especialida_idx` (`especialidades_id`),
-  KEY `fk_consultas_com_marcacao_confirmada_a_realizar_horarios1_idx` (`horarios_id`),
-  CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_especialidades1` FOREIGN KEY (`especialidades_id`) REFERENCES `especialidades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_horarios1` FOREIGN KEY (`horarios_id`) REFERENCES `horarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +97,7 @@ CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
 
 LOCK TABLES `consultas_com_marcacao_confirmada_a_realizar` WRITE;
 /*!40000 ALTER TABLE `consultas_com_marcacao_confirmada_a_realizar` DISABLE KEYS */;
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES (5,'2013-11-15 21:09:24','11/25/2033','14:30',3,'pedro@fonseca.com',4,1),(6,'2013-11-15 21:00:01','11/20/2013','14:30',22,'pedrogil@fonseca.com',9,2);
+INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES (14,'2013-11-26 23:56:59','11/30/2013','14:00',1,'jricvalerio@gmail.com'),(16,'2013-11-27 08:54:04','11/30/2013','14:00',13,'jricvalerio@gmail.com'),(17,'2013-11-27 09:13:57','12/18/2013','14:00',1,'jose@TESTE.com'),(18,'2013-11-27 09:16:41','12/18/2013','14:00',13,'teste@teste.com');
 /*!40000 ALTER TABLE `consultas_com_marcacao_confirmada_a_realizar` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +244,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 
 LOCK TABLES `medicos_administracao_de_consultas` WRITE;
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` DISABLE KEYS */;
-INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor','secret','2013-11-26 14:43:09',15),(2,'doctora','secret','2013-11-23 20:41:35',26),(3,'stupid','secretinho','0000-00-00 00:00:00',30);
+INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor','secret','2013-11-27 09:19:05',15),(2,'doctora','secret','2013-11-23 20:41:35',26),(3,'stupid','secretinho','0000-00-00 00:00:00',30);
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +299,7 @@ CREATE TABLE `utentes` (
 
 LOCK TABLES `utentes` WRITE;
 /*!40000 ALTER TABLE `utentes` DISABLE KEYS */;
-INSERT INTO `utentes` VALUES ('catarina18@gmail.com','Catarina','Neto','Avenida Masterchef Sofá 3ºlugar','932415161','2013-11-12 22:17:13'),('jose@TEST.com','José','Sousa','Rua do José Sousa','968986868','2013-11-23 21:27:58'),('maria45@hotmail.com','Maria','Sousa','Rua Particular à Estrada da Cruz nº 212','961234321','2013-11-12 22:13:47'),('migueltavares@gmail.com','Miguel','Tavares','Avenida João Garcia Nº 35 2º Esq','912387456','2013-11-12 22:15:34'),('pedro@fonseca.com','Pedro','Fonseca','Rua da Rua nº4 Loulé','917547647','2013-11-15 21:50:58'),('pedrogil@fonseca.com','Pedro','Fonseca','Rua da Rua nº4','917547647','2013-11-15 21:52:00'),('pedrogil@gmail.com','Pedro','Gil','Avenida da Boa Vida 3º Esq.','912342345','2013-11-12 22:11:35'),('rita@antunes.com','Rita','Antunes','Rua da Rainha das Ilhas das Cobras Nº13','967877887','2013-11-11 22:34:18'),('rui@santos.com','Rui','Santos','Rua da Santa Casa Nº234','912344556','2013-11-12 22:10:39'),('silvia_almeida@hotmail.com','Sílvia','Almeida','Rua da Dona Filomena 7ºC','932451621','2013-11-12 22:14:30'),('teste@teste.com','Joana TESTE','TESTE','RUA TESTE','913198739','2013-11-26 12:19:43');
+INSERT INTO `utentes` VALUES ('catarina18@gmail.com','Catarina','Neto','Avenida Masterchef Sofá 3ºlugar','932415161','2013-11-12 22:17:13'),('jose@TEST.com','José','Sousa','Rua do José Sousa','968986868','2013-11-23 21:27:58'),('jose@TESTE.com','TESTE','TESTE','RUA TESTE','952545246','2013-11-26 23:33:37'),('jricvalerio@gmail.com','Joana','Serafim','Rua Particular à Estrada da Cruz Nº236','952545246','2013-11-26 23:04:58'),('maria45@hotmail.com','Maria','Sousa','Rua Particular à Estrada da Cruz nº 212','961234321','2013-11-12 22:13:47'),('migueltavares@gmail.com','Miguel','Tavares','Avenida João Garcia Nº 35 2º Esq','912387456','2013-11-12 22:15:34'),('pedro@fonseca.com','Pedro','Fonseca','Rua da Rua nº4 Loulé','917547647','2013-11-15 21:50:58'),('pedrogil@fonseca.com','Pedro','Fonseca','Rua da Rua nº4','917547647','2013-11-15 21:52:00'),('pedrogil@gmail.com','Pedro','Gil','Avenida da Boa Vida 3º Esq.','912342345','2013-11-12 22:11:35'),('rita@antunes.com','Rita','Antunes','Rua da Rainha das Ilhas das Cobras Nº13','967877887','2013-11-11 22:34:18'),('rui@santos.com','Rui','Santos','Rua da Santa Casa Nº234','912344556','2013-11-12 22:10:39'),('silvia_almeida@hotmail.com','Sílvia','Almeida','Rua da Dona Filomena 7ºC','932451621','2013-11-12 22:14:30'),('teste@teste.com','Joana TESTE','TESTE','RUA TESTE','913198739','2013-11-26 12:19:43');
 /*!40000 ALTER TABLE `utentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,4 +337,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-26 17:36:58
+-- Dump completed on 2013-11-27  9:21:43

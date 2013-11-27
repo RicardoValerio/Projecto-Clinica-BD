@@ -16,17 +16,35 @@
 // verifica se já existe o numero limite de consultas para uma determinada especialidade
  // numa determinada data, em determinada hora e em determinado horario
 
-$sql = "SELECT data_consulta, 
-               hora_consulta, 
-               horarios_id,
-               especialidades_id 
-        FROM consultas_com_marcacao_confirmada_a_realizar 
-        WHERE   especialidades_id = ". $_POST['especialidade'] ." 
-                AND data_consulta = '". $_POST['data'] ."' 
-                AND hora_consulta='". $_POST['horas'].":".$_POST['minutos'] . "' 
-                AND horarios_id=". $_POST['horario'];
+// $sql = "SELECT data_consulta, 
+//                hora_consulta, 
+//                horarios_id,
+//                especialidades_id 
+//         FROM consultas_com_marcacao_confirmada_a_realizar 
+//         WHERE   especialidades_id = ". $_POST['especialidade'] ." 
+//                 AND data_consulta = '". $_POST['data'] ."' 
+//                 AND hora_consulta='". $_POST['horas'].":".$_POST['minutos'] ."' 
+//                 AND horarios_id=". $_POST['horario'];
+
+$sql = " SELECT consultas_com_marcacao_confirmada_a_realizar.id,
+                consultas_com_marcacao_confirmada_a_realizar.datetime_confirmacao,
+                consultas_com_marcacao_confirmada_a_realizar.data_consulta,                 
+                consultas_com_marcacao_confirmada_a_realizar.hora_consulta,               
+                consultas_com_marcacao_confirmada_a_realizar.medicos_id,                 
+                consultas_com_marcacao_confirmada_a_realizar.utentes_email,
+                medicos.especialidades_id,
+                medicos.horarios_id          
+          FROM consultas_com_marcacao_confirmada_a_realizar 
+          INNER JOIN medicos              
+          ON medicos.id = consultas_com_marcacao_confirmada_a_realizar.medicos_id
+          AND medicos.especialidades_id = ". $_POST['especialidade'] ."
+          AND medicos.horarios_id = ". $_POST['horario'] ."
+          AND consultas_com_marcacao_confirmada_a_realizar.data_consulta = '". $_POST['data'] ."'
+          AND consultas_com_marcacao_confirmada_a_realizar.hora_consulta = '". $_POST['horas'] .":". $_POST['minutos'] ."' ";
+
 
 $result_set = $connection->query($sql);
+
 
 // Sabendo que 2 é o numero máximo de consultórios para cada especialidade, 
 // logo é o numero máximo de médicos e de consultas possíveis na mesma hora, no mesmo dia, e no mesmo horário para
@@ -50,20 +68,20 @@ if($result_set->rowCount() == 2){
 
 
     $sql_inserir_utente = "INSERT INTO utentes 
-                      (email, 
-                       primeiro_nome, 
-                       ultimo_nome,
-                       morada,
-                       contacto_tel,
-                       datetime_registo
-                      ) 
-                VALUES ('" . $_POST['email'] ."','". 
-                             $_POST['primeiro_nome'] ."','". 
-                             $_POST['ultimo_nome'] ."','". 
-                             $_POST['morada'] ."','". 
-                             $_POST['telefone'] ."', 
-                             NOW() 
-                        )" ;
+                                      (email, 
+                                       primeiro_nome, 
+                                       ultimo_nome,
+                                       morada,
+                                       contacto_tel,
+                                       datetime_registo
+                                      ) 
+                                VALUES ('" . $_POST['email'] ."','". 
+                                             $_POST['primeiro_nome'] ."','". 
+                                             $_POST['ultimo_nome'] ."','". 
+                                             $_POST['morada'] ."','". 
+                                             $_POST['telefone'] ."', 
+                                             NOW() 
+                                        )" ;
           
           // ou executa correctamente : não existia nenhum utente com o email(PK) igual ao passado
           // ou não executa correctamente : existia um utente com o email(PK) igual ao passado
@@ -80,8 +98,10 @@ if($result_set->rowCount() == 2){
                                   FROM medicos 
                                   WHERE medicos.id NOT IN 
                                   ( SELECT medicos_id 
-                                    FROM consultas_com_marcacao_confirmada_a_realizar 
-                                    WHERE especialidades_id = ". $_POST['especialidade'] ." 
+                                    FROM medicos, consultas_com_marcacao_confirmada_a_realizar 
+                                    WHERE medicos.especialidades_id = ". $_POST['especialidade'] ."
+                                     AND medicos.horarios_id = ". $_POST['horario'] ."
+                                     AND consultas_com_marcacao_confirmada_a_realizar.data_consulta='". $_POST['data'] ."'
                                    )
                                   AND medicos.especialidades_id = ". $_POST['especialidade'] ." 
                                   AND medicos.horarios_id = ". $_POST['horario'];
@@ -99,17 +119,14 @@ if($result_set->rowCount() == 2){
                                    data_consulta,
                                    hora_consulta,
                                    medicos_id,
-                                   utentes_email,
-                                   especialidades_id,
-                                   horarios_id)
+                                   utentes_email
+                                   )
                               VALUES ( NOW(), '". 
                                        $_POST['data'] ."', '" . 
                                        $_POST['horas'].":". $_POST['minutos'] ."', ". 
                                        $linha_retornada['id'] ." , '" . 
-                                       $_POST['email'] . "', " . 
-                                       $_POST['especialidade'] .", " . 
-                                       $_POST['horario'] .
-                                    ")" ;
+                                       $_POST['email'] . 
+                                    "')" ;
 
     // Verificar o número de rows inseridas na execução e com isso avaliar condição
         if($num_rows_inseridas = $connection->exec($sql_marcacao_consulta)){

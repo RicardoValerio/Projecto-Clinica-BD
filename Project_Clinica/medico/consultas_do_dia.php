@@ -113,22 +113,20 @@
                     <?php foreach ($result_set as $coluna): ?>
                     
                     <!-- coloca as oito celulas correspondentes ao campo do result set a ser iterado -->
-                          <tr>
+                      <tr>
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[0]; ?></td>   
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[1]; ?></td>   
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[2]; ?></td>   
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[3]; ?></td>   
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[4]; ?></td>   
-                          <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>   
-                          <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[6]; ?></td>   
-                          <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[7]; ?></td>
+                          <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>
                           
                           <td style="text-align: center; vertical-align: middle;">
                             <!-- coloca um botão para cada linha iterada com um link que contem um ficheiro php que irá confirmar a realização da consulta e que passa como argumento a chave primária da tabela "consultas_com_marcacao_confirmada_a_realizar" e o email do utente que é chave primária da tabela "utentes" -->
                           <a class=" radius success button" href="confirmar_consulta.php?pk=<?php echo $coluna[0];?>&ue=<?php echo $coluna[5];?>">Confirmar Realização</a>
                           </td>
-                          
-                          </tr>
+
+                      </tr>
                           
                     <?php endforeach ?>
           <?php endif ?>
