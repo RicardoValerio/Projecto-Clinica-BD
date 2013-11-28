@@ -68,21 +68,17 @@ if (!empty($_POST)) {
                            data_consulta, 
                            hora_consulta, 
                            medicos_id, 
-                           utentes_email, 
-                           especialidades_id, 
-                           horarios_id
+                           utentes_email
                            ) 
                       VALUES 
                             ( NOW(), '". 
                               $_POST['data_consulta']     .   "' , '"   . 
                               $_POST['hora_consulta']     .   "' ,  "   . 
                               $_POST['medicos_id']        .   "  , '"   . 
-                              $_POST['utentes_email']     .   "' ,  "   .  
-                              $_POST['especialidades_id'] .   "  ,  "   .  
-                              $_POST['horarios_id'] . 
-                           " )";
+                              $_POST['utentes_email']     .   
+                              "')";
 
-// caso a query seja executada com sucesso, então:
+              // caso a query seja executada com sucesso, então:
               if($insert_count = $connection->exec($sql)){
                 // redirecciona o administrador para o index da pasta admin
                   header("Location: index.php");
@@ -170,7 +166,8 @@ if (!empty($_POST)) {
                                    contacto_tel, 
                                    foto, 
                                    especialidades_id, 
-                                   horarios_id 
+                                   horarios_id,
+                                   salario_mensal 
                                    ) 
                             VALUES ('" . $_POST['primeiro_nome'] ."', '". 
                                          $_POST['ultimo_nome'] ."', '". 
@@ -178,7 +175,8 @@ if (!empty($_POST)) {
                                          $_POST['contacto_tel'] ."', '". 
                                          $_POST['foto'] . "', " . 
                                          $_POST['especialidades_id'] . ", ". 
-                                         $_POST['horarios_id'] .
+                                         $_POST['horarios_id'] . ", ".
+                                         $_POST['salario_mensal'] .
                                    ")";
                   
                   // caso a query seja executada com sucesso, então:

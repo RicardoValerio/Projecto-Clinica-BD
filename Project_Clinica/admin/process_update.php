@@ -59,9 +59,7 @@ require '../MODEL/databaseConnection.php';
 						      				data_consulta='". $_POST['data_consulta'] ."', 
 						      				hora_consulta='". $_POST['hora_consulta'] ."', 
 						      				medicos_id=". $_POST['medicos_id'] .", 
-						      				utentes_email='". $_POST['utentes_email'] ."',
-						      				especialidades_id=". $_POST['especialidades_id'] .", 
-						      				horarios_id=". $_POST['horarios_id'] ."
+						      				utentes_email='". $_POST['utentes_email'] ."'
 						      			WHERE id=". $_POST['chave_primaria'];
 						        
 						        // caso a execução da query seja bem sucedida, então:
@@ -147,8 +145,9 @@ require '../MODEL/databaseConnection.php';
 						      				contacto_tel='". $_POST['contacto_tel'] ."', 
 						      				foto='" . $_POST['foto'] ."', 
 						      				especialidades_id=". $_POST['especialidades_id'] .", 
-						      				horarios_id=". $_POST['horarios_id'] . " 
-						      			WHERE id=". $_POST['chave_primaria'] ;
+						      				horarios_id=". $_POST['horarios_id'] .",
+						      				salario_mensal=". $_POST['salario_mensal'] ." 
+						      			WHERE id=". $_POST['chave_primaria'];
 						        
 						        // caso a execução da query seja bem sucedida, então:
 						        if($update_count = $connection->exec($sql)){
