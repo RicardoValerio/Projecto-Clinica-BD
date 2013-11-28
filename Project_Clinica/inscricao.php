@@ -16,16 +16,6 @@
 // verifica se já existe o numero limite de consultas para uma determinada especialidade
  // numa determinada data, em determinada hora e em determinado horario
 
-// $sql = "SELECT data_consulta, 
-//                hora_consulta, 
-//                horarios_id,
-//                especialidades_id 
-//         FROM consultas_com_marcacao_confirmada_a_realizar 
-//         WHERE   especialidades_id = ". $_POST['especialidade'] ." 
-//                 AND data_consulta = '". $_POST['data'] ."' 
-//                 AND hora_consulta='". $_POST['horas'].":".$_POST['minutos'] ."' 
-//                 AND horarios_id=". $_POST['horario'];
-
 $sql = " SELECT consultas_com_marcacao_confirmada_a_realizar.id,
                 consultas_com_marcacao_confirmada_a_realizar.datetime_confirmacao,
                 consultas_com_marcacao_confirmada_a_realizar.data_consulta,                 

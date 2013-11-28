@@ -97,12 +97,11 @@
     <!-- Bloco de PHP responsável por colocar os valores das células na tabela HTML -->
       <?php 
           // query que vai retornar todos os valores da tabela "consultas_realizadas" onde o codigo do medico for igual ao codigo do médico que está na sessão
-        $sql = "CREATE VIEW [Histórico de Consultas] AS
-                SELECT * 
+        $sql = "SELECT * 
                 FROM consultas_realizadas 
-                WHERE consultas_realizadas.medicos_id = (  SELECT medicos_administracao_de_consultas.medicos_id 
+                WHERE consultas_realizadas.medicos_id = ( SELECT medicos_administracao_de_consultas.medicos_id 
                                       FROM medicos_administracao_de_consultas 
-                                      WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "'
+                                      WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] ."'
                                     )
                 ORDER BY datetime_consulta_realizada DESC";
       ?>
