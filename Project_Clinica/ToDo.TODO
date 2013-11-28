@@ -1,7 +1,7 @@
  Na realização do trabalho os alunos têm de conceber e implementar uma base de dados com uma complexidade mínima de seis tabelas e usar pelo menos:
 
          ✔ uma vez Subconsultas e @done (13-11-21 20:26)
-         ☐ Vistas
+         ✔ Vistas @done (13-11-28 16:33)
 
 e ainda os comandos, cláusulas, operadores e funções seguintes:
  
@@ -18,7 +18,7 @@ Comandos:
                       ALTER TABLE `projecto_clinica`.`medicos` 
                       ADD COLUMN `salario_mensal` DECIMAL(7,2) NOT NULL AFTER `horarios_id`;
 
-☐ JOIN
+✔ JOIN @done (13-11-28 16:15)
 
 
 Cláusulas:  
