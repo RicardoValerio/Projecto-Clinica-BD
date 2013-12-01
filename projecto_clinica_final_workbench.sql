@@ -65,18 +65,18 @@ CREATE TABLE `administradores` (
 
 LOCK TABLES `administradores` WRITE;
 /*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
-INSERT INTO `administradores` VALUES (1,'admin','pass','2013-11-26 17:32:32'),(2,'super user','secret','2013-11-12 20:31:39');
+INSERT INTO `administradores` VALUES (1,'admin','pass','2013-11-28 11:20:43'),(2,'super','root','2013-11-12 20:31:39');
 /*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `consultas_com_marcacao_confirmada_a_realizar`
+-- Table structure for table `consultas_marcadas`
 --
 
-DROP TABLE IF EXISTS `consultas_com_marcacao_confirmada_a_realizar`;
+DROP TABLE IF EXISTS `consultas_marcadas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
+CREATE TABLE `consultas_marcadas` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `datetime_confirmacao` datetime NOT NULL,
   `data_consulta` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -88,17 +88,16 @@ CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `consultas_com_marcacao_confirmada_a_realizar`
+-- Dumping data for table `consultas_marcadas`
 --
 
-LOCK TABLES `consultas_com_marcacao_confirmada_a_realizar` WRITE;
-/*!40000 ALTER TABLE `consultas_com_marcacao_confirmada_a_realizar` DISABLE KEYS */;
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES (14,'2013-11-26 23:56:59','11/30/2013','14:00',1,'jricvalerio@gmail.com'),(16,'2013-11-27 08:54:04','11/30/2013','14:00',13,'jricvalerio@gmail.com'),(17,'2013-11-27 09:13:57','12/18/2013','14:00',1,'jose@TESTE.com'),(18,'2013-11-27 09:16:41','12/18/2013','14:00',13,'teste@teste.com');
-/*!40000 ALTER TABLE `consultas_com_marcacao_confirmada_a_realizar` ENABLE KEYS */;
+LOCK TABLES `consultas_marcadas` WRITE;
+/*!40000 ALTER TABLE `consultas_marcadas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `consultas_marcadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -121,7 +120,7 @@ CREATE TABLE `consultas_realizadas` (
   KEY `fk_consultas_realizadas_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_realizadas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_realizadas_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +129,6 @@ CREATE TABLE `consultas_realizadas` (
 
 LOCK TABLES `consultas_realizadas` WRITE;
 /*!40000 ALTER TABLE `consultas_realizadas` DISABLE KEYS */;
-INSERT INTO `consultas_realizadas` VALUES (9,'2013-11-17 22:05:43',40.00,'Ouve mal Mesmo!!!','Muitos Cotonetes Mesmo!!!',15,'pedro@fonseca.com');
 /*!40000 ALTER TABLE `consultas_realizadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,7 +233,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
   PRIMARY KEY (`id`,`username`),
   KEY `fk_medicos_administracao_de_consultas_medicos1_idx` (`medicos_id`),
   CONSTRAINT `fk_medicos_administracao_de_consultas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,7 +242,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 
 LOCK TABLES `medicos_administracao_de_consultas` WRITE;
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` DISABLE KEYS */;
-INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor','secret','2013-11-27 09:19:05',15),(2,'doctora','secret','2013-11-23 20:41:35',26),(3,'stupid','secretinho','0000-00-00 00:00:00',30);
+INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor_1','secret','2013-11-28 16:40:51',1),(2,'doctor_2','secret','2013-11-28 12:09:31',2),(3,'doctor_3','secret','2013-11-28 12:09:31',3),(4,'doctor_4','secret','2013-11-28 12:09:31',4),(5,'doctor_5','secret','2013-11-28 12:09:31',5),(6,'doctor_6','secret','2013-11-28 12:09:31',6),(7,'doctor_7','secret','2013-11-28 12:09:31',7),(8,'doctor_8','secret','2013-11-28 12:09:31',8),(9,'doctor_9','secret','2013-11-28 12:09:31',9),(10,'doctor_10','secret','2013-11-28 12:09:31',10),(11,'doctor_11','secret','2013-11-28 12:09:31',11),(12,'doctor_12','secret','2013-11-28 12:09:31',12),(13,'doctor_13','secret','2013-11-28 21:08:19',13),(14,'doctor_14','secret','2013-11-28 12:09:31',14),(15,'doctor_15','secret','2013-11-28 12:09:31',15),(16,'doctor_16','secret','2013-11-28 12:09:31',16),(17,'doctor_17','secret','2013-11-28 12:09:31',17),(18,'doctor_18','secret','2013-11-28 12:09:31',18),(19,'doctor_20','secret','2013-11-28 12:11:03',20),(20,'doctor_21','secret','2013-11-28 12:09:32',21),(21,'doctor_22','secret','2013-11-28 12:09:32',22),(22,'doctor_23','secret','2013-11-28 12:10:43',23),(23,'doctor_24','secret','2013-11-28 12:09:32',24),(24,'doctor_25','secret','2013-11-28 12:09:32',25),(25,'doctor_26','secret','2013-11-28 12:09:32',26),(26,'doctor_27','secret','2013-11-28 12:09:32',27),(27,'doctor_28','secret','2013-11-28 12:09:32',28),(28,'doctor_29','secret','2013-11-28 12:09:32',29),(29,'doctor_30','secret','2013-11-28 12:09:32',30),(30,'doctor_31','secret','2013-11-28 12:09:32',31),(31,'doctor_32','secret','2013-11-28 12:09:32',32),(32,'doctor_33','secret','2013-11-28 12:09:32',33),(33,'doctor_34','secret','2013-11-28 12:09:32',34),(34,'doctor_35','secret','2013-11-28 12:09:32',35),(35,'doctor_36','secret','2013-11-28 12:09:32',36),(36,'doctor_37','secret','2013-11-28 12:09:32',37),(37,'doctor_38','secret','2013-11-28 12:09:32',38),(38,'doctor_39','secret','2013-11-28 12:09:32',39),(39,'doctor_40','secret','2013-11-28 12:09:32',40),(40,'doctor_41','secret','2013-11-28 12:09:33',41),(41,'doctor_42','secret','2013-11-28 12:09:33',42),(42,'doctor_43','secret','2013-11-28 12:09:33',43),(43,'doctor_44','secret','2013-11-28 12:09:33',44),(44,'doctor_45','secret','2013-11-28 12:09:33',45),(45,'doctor_46','secret','2013-11-28 12:09:33',46),(46,'doctor_47','secret','2013-11-28 12:09:33',47),(47,'doctor_48','secret','2013-11-28 12:09:33',48),(48,'doctor_49','secret','2013-11-28 12:09:33',49),(49,'doctor_50','secret','2013-11-28 12:09:33',50),(50,'doctor_51','secret','2013-11-28 12:09:33',51),(51,'doctor_52','secret','2013-11-28 12:09:33',52),(52,'doctor_53','secret','2013-11-28 12:09:33',53);
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,7 +297,6 @@ CREATE TABLE `utentes` (
 
 LOCK TABLES `utentes` WRITE;
 /*!40000 ALTER TABLE `utentes` DISABLE KEYS */;
-INSERT INTO `utentes` VALUES ('catarina18@gmail.com','Catarina','Neto','Avenida Masterchef Sofá 3ºlugar','932415161','2013-11-12 22:17:13'),('jose@TEST.com','José','Sousa','Rua do José Sousa','968986868','2013-11-23 21:27:58'),('jose@TESTE.com','TESTE','TESTE','RUA TESTE','952545246','2013-11-26 23:33:37'),('jricvalerio@gmail.com','Joana','Serafim','Rua Particular à Estrada da Cruz Nº236','952545246','2013-11-26 23:04:58'),('maria45@hotmail.com','Maria','Sousa','Rua Particular à Estrada da Cruz nº 212','961234321','2013-11-12 22:13:47'),('migueltavares@gmail.com','Miguel','Tavares','Avenida João Garcia Nº 35 2º Esq','912387456','2013-11-12 22:15:34'),('pedro@fonseca.com','Pedro','Fonseca','Rua da Rua nº4 Loulé','917547647','2013-11-15 21:50:58'),('pedrogil@fonseca.com','Pedro','Fonseca','Rua da Rua nº4','917547647','2013-11-15 21:52:00'),('pedrogil@gmail.com','Pedro','Gil','Avenida da Boa Vida 3º Esq.','912342345','2013-11-12 22:11:35'),('rita@antunes.com','Rita','Antunes','Rua da Rainha das Ilhas das Cobras Nº13','967877887','2013-11-11 22:34:18'),('rui@santos.com','Rui','Santos','Rua da Santa Casa Nº234','912344556','2013-11-12 22:10:39'),('silvia_almeida@hotmail.com','Sílvia','Almeida','Rua da Dona Filomena 7ºC','932451621','2013-11-12 22:14:30'),('teste@teste.com','Joana TESTE','TESTE','RUA TESTE','913198739','2013-11-26 12:19:43');
 /*!40000 ALTER TABLE `utentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,6 +324,44 @@ LOCK TABLES `vantagens` WRITE;
 INSERT INTO `vantagens` VALUES (1,'Médicos e técnicos com currículo profissional','Não poderia existir qualidade de serviços se não existissem as mais-valias profissionais das pessoas que fazem parte de toda esta equipa. Assim, a Clínica Médica e Dentária do Vale do Tejo preocupou-se desde o seu início em juntar um conjunto de médicos e técnicos com provas dadas, que garantem a qualidade e o bem estar daqueles que depositam a sua confiança.'),(2,'Escolha dos melhores equipamentos e materiais','Porque existe o rigor técnico e humano na aplicação de qualquer serviço prestado, a Pseudo Clínica procura para a segurança dos seus pacientes, os melhores materiais do mercado, garantindo assim a qualidade de todos os seus actos médicos.'),(3,'Honestidade dos serviços','A principal vantagem da empresa.'),(4,'Marcação rápida de consultas','Em qualquer lugar através de email, ou por telefone, poderá marcar préviamente a sua consulta.'),(5,'Facilidades de pagamento','A Pseudo Clínica, desenvolveu soluções de pagamento até 12 meses sem qualquer juro ou entrada, e também parcerias com as maiores entidades bancárias do país no sentido de agelizar e oferecer um conjunto de vantagens exclusivas para os seus clientes.  \r\nContamos com excelentes condições para que possa concretizar o tratamento que tanto necessita, aliviando assim, de uma forma fácil o pagamento mensal dessa obrigação.');
 /*!40000 ALTER TABLE `vantagens` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `view_historico_consultas`
+--
+
+DROP TABLE IF EXISTS `view_historico_consultas`;
+/*!50001 DROP VIEW IF EXISTS `view_historico_consultas`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_historico_consultas` (
+  `id` tinyint NOT NULL,
+  `datetime_consulta_realizada` tinyint NOT NULL,
+  `valor_consulta` tinyint NOT NULL,
+  `diagnostico` tinyint NOT NULL,
+  `prescricao` tinyint NOT NULL,
+  `medicos_id` tinyint NOT NULL,
+  `utentes_email` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_historico_consultas`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_historico_consultas`*/;
+/*!50001 DROP VIEW IF EXISTS `view_historico_consultas`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_historico_consultas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from `consultas_realizadas` order by `consultas_realizadas`.`datetime_consulta_realizada` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -337,4 +372,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-27  9:21:43
+-- Dump completed on 2013-12-01 18:33:25

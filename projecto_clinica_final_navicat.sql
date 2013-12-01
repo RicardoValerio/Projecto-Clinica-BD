@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-11-27 09:21:22
+Date: 2013-12-01 18:32:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for acordos
+-- Table structure for `acordos`
 -- ----------------------------
 DROP TABLE IF EXISTS `acordos`;
 CREATE TABLE `acordos` (
@@ -48,7 +48,7 @@ INSERT INTO `acordos` VALUES ('15', '2013-10-26 23:41:10', 'tor', 'tor.png');
 INSERT INTO `acordos` VALUES ('16', '2013-10-27 00:16:56', 'ubuntu', 'ubuntu.png');
 
 -- ----------------------------
--- Table structure for administradores
+-- Table structure for `administradores`
 -- ----------------------------
 DROP TABLE IF EXISTS `administradores`;
 CREATE TABLE `administradores` (
@@ -62,14 +62,14 @@ CREATE TABLE `administradores` (
 -- ----------------------------
 -- Records of administradores
 -- ----------------------------
-INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-26 17:32:32');
-INSERT INTO `administradores` VALUES ('2', 'super user', 'secret', '2013-11-12 20:31:39');
+INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-28 11:20:43');
+INSERT INTO `administradores` VALUES ('2', 'super', 'root', '2013-11-12 20:31:39');
 
 -- ----------------------------
--- Table structure for consultas_com_marcacao_confirmada_a_realizar
+-- Table structure for `consultas_marcadas`
 -- ----------------------------
-DROP TABLE IF EXISTS `consultas_com_marcacao_confirmada_a_realizar`;
-CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
+DROP TABLE IF EXISTS `consultas_marcadas`;
+CREATE TABLE `consultas_marcadas` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `datetime_confirmacao` datetime NOT NULL,
   `data_consulta` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
@@ -81,18 +81,14 @@ CREATE TABLE `consultas_com_marcacao_confirmada_a_realizar` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
--- Records of consultas_com_marcacao_confirmada_a_realizar
+-- Records of consultas_marcadas
 -- ----------------------------
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('14', '2013-11-26 23:56:59', '11/30/2013', '14:00', '1', 'jricvalerio@gmail.com');
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('16', '2013-11-27 08:54:04', '11/30/2013', '14:00', '13', 'jricvalerio@gmail.com');
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('17', '2013-11-27 09:13:57', '12/18/2013', '14:00', '1', 'jose@TESTE.com');
-INSERT INTO `consultas_com_marcacao_confirmada_a_realizar` VALUES ('18', '2013-11-27 09:16:41', '12/18/2013', '14:00', '13', 'teste@teste.com');
 
 -- ----------------------------
--- Table structure for consultas_realizadas
+-- Table structure for `consultas_realizadas`
 -- ----------------------------
 DROP TABLE IF EXISTS `consultas_realizadas`;
 CREATE TABLE `consultas_realizadas` (
@@ -108,15 +104,14 @@ CREATE TABLE `consultas_realizadas` (
   KEY `fk_consultas_realizadas_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_realizadas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_realizadas_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_realizadas
 -- ----------------------------
-INSERT INTO `consultas_realizadas` VALUES ('9', '2013-11-17 22:05:43', '40.00', 'Ouve mal Mesmo!!!', 'Muitos Cotonetes Mesmo!!!', '15', 'pedro@fonseca.com');
 
 -- ----------------------------
--- Table structure for especialidades
+-- Table structure for `especialidades`
 -- ----------------------------
 DROP TABLE IF EXISTS `especialidades`;
 CREATE TABLE `especialidades` (
@@ -145,7 +140,7 @@ INSERT INTO `especialidades` VALUES ('14', 'Neurocirurgia', 'Neurocirurgia é a 
 INSERT INTO `especialidades` VALUES ('15', 'Terapia da Fala', 'A Terapia da fala, é a ciência que tem como objecto de estudo a comunicação humana. Não apenas os distúrbios da linguagem são do seu interesse, como também o modo de comunicação sádio e eficaz.', '35.00');
 
 -- ----------------------------
--- Table structure for horarios
+-- Table structure for `horarios`
 -- ----------------------------
 DROP TABLE IF EXISTS `horarios`;
 CREATE TABLE `horarios` (
@@ -161,7 +156,7 @@ INSERT INTO `horarios` VALUES ('1', 'Manhã');
 INSERT INTO `horarios` VALUES ('2', 'Tarde');
 
 -- ----------------------------
--- Table structure for medicos
+-- Table structure for `medicos`
 -- ----------------------------
 DROP TABLE IF EXISTS `medicos`;
 CREATE TABLE `medicos` (
@@ -238,7 +233,7 @@ INSERT INTO `medicos` VALUES ('52', 'Carla', 'Dias', 'carla@dias.com', '91858787
 INSERT INTO `medicos` VALUES ('53', 'Paulo', 'Bento', 'paulinho@bento.com', '923452617', 'android.png', '14', '2', '971.00');
 
 -- ----------------------------
--- Table structure for medicos_administracao_de_consultas
+-- Table structure for `medicos_administracao_de_consultas`
 -- ----------------------------
 DROP TABLE IF EXISTS `medicos_administracao_de_consultas`;
 CREATE TABLE `medicos_administracao_de_consultas` (
@@ -250,17 +245,66 @@ CREATE TABLE `medicos_administracao_de_consultas` (
   PRIMARY KEY (`id`,`username`),
   KEY `fk_medicos_administracao_de_consultas_medicos1_idx` (`medicos_id`),
   CONSTRAINT `fk_medicos_administracao_de_consultas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of medicos_administracao_de_consultas
 -- ----------------------------
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor', 'secret', '2013-11-27 09:19:05', '15');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('2', 'doctora', 'secret', '2013-11-23 20:41:35', '26');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'stupid', 'secretinho', '0000-00-00 00:00:00', '30');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor_1', 'secret', '2013-11-28 16:40:51', '1');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('2', 'doctor_2', 'secret', '2013-11-28 12:09:31', '2');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'doctor_3', 'secret', '2013-11-28 12:09:31', '3');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('4', 'doctor_4', 'secret', '2013-11-28 12:09:31', '4');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('5', 'doctor_5', 'secret', '2013-11-28 12:09:31', '5');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('6', 'doctor_6', 'secret', '2013-11-28 12:09:31', '6');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('7', 'doctor_7', 'secret', '2013-11-28 12:09:31', '7');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('8', 'doctor_8', 'secret', '2013-11-28 12:09:31', '8');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('9', 'doctor_9', 'secret', '2013-11-28 12:09:31', '9');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('10', 'doctor_10', 'secret', '2013-11-28 12:09:31', '10');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('11', 'doctor_11', 'secret', '2013-11-28 12:09:31', '11');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('12', 'doctor_12', 'secret', '2013-11-28 12:09:31', '12');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('13', 'doctor_13', 'secret', '2013-11-28 21:08:19', '13');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('14', 'doctor_14', 'secret', '2013-11-28 12:09:31', '14');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('15', 'doctor_15', 'secret', '2013-11-28 12:09:31', '15');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('16', 'doctor_16', 'secret', '2013-11-28 12:09:31', '16');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('17', 'doctor_17', 'secret', '2013-11-28 12:09:31', '17');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('18', 'doctor_18', 'secret', '2013-11-28 12:09:31', '18');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('19', 'doctor_20', 'secret', '2013-11-28 12:11:03', '20');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('20', 'doctor_21', 'secret', '2013-11-28 12:09:32', '21');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('21', 'doctor_22', 'secret', '2013-11-28 12:09:32', '22');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('22', 'doctor_23', 'secret', '2013-11-28 12:10:43', '23');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('23', 'doctor_24', 'secret', '2013-11-28 12:09:32', '24');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('24', 'doctor_25', 'secret', '2013-11-28 12:09:32', '25');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('25', 'doctor_26', 'secret', '2013-11-28 12:09:32', '26');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('26', 'doctor_27', 'secret', '2013-11-28 12:09:32', '27');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('27', 'doctor_28', 'secret', '2013-11-28 12:09:32', '28');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('28', 'doctor_29', 'secret', '2013-11-28 12:09:32', '29');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('29', 'doctor_30', 'secret', '2013-11-28 12:09:32', '30');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('30', 'doctor_31', 'secret', '2013-11-28 12:09:32', '31');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('31', 'doctor_32', 'secret', '2013-11-28 12:09:32', '32');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('32', 'doctor_33', 'secret', '2013-11-28 12:09:32', '33');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('33', 'doctor_34', 'secret', '2013-11-28 12:09:32', '34');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('34', 'doctor_35', 'secret', '2013-11-28 12:09:32', '35');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('35', 'doctor_36', 'secret', '2013-11-28 12:09:32', '36');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('36', 'doctor_37', 'secret', '2013-11-28 12:09:32', '37');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('37', 'doctor_38', 'secret', '2013-11-28 12:09:32', '38');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('38', 'doctor_39', 'secret', '2013-11-28 12:09:32', '39');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('39', 'doctor_40', 'secret', '2013-11-28 12:09:32', '40');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('40', 'doctor_41', 'secret', '2013-11-28 12:09:33', '41');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('41', 'doctor_42', 'secret', '2013-11-28 12:09:33', '42');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('42', 'doctor_43', 'secret', '2013-11-28 12:09:33', '43');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('43', 'doctor_44', 'secret', '2013-11-28 12:09:33', '44');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('44', 'doctor_45', 'secret', '2013-11-28 12:09:33', '45');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('45', 'doctor_46', 'secret', '2013-11-28 12:09:33', '46');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('46', 'doctor_47', 'secret', '2013-11-28 12:09:33', '47');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('47', 'doctor_48', 'secret', '2013-11-28 12:09:33', '48');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('48', 'doctor_49', 'secret', '2013-11-28 12:09:33', '49');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('49', 'doctor_50', 'secret', '2013-11-28 12:09:33', '50');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('50', 'doctor_51', 'secret', '2013-11-28 12:09:33', '51');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('51', 'doctor_52', 'secret', '2013-11-28 12:09:33', '52');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('52', 'doctor_53', 'secret', '2013-11-28 12:09:33', '53');
 
 -- ----------------------------
--- Table structure for questoes_online
+-- Table structure for `questoes_online`
 -- ----------------------------
 DROP TABLE IF EXISTS `questoes_online`;
 CREATE TABLE `questoes_online` (
@@ -279,7 +323,7 @@ INSERT INTO `questoes_online` VALUES ('1', 'Joana Caetano', 'juju@caetano.com', 
 INSERT INTO `questoes_online` VALUES ('5', 'Pedro Fonseca', 'pedro@fonseca.com', 'Portugal?', '2013-11-15 22:02:57');
 
 -- ----------------------------
--- Table structure for utentes
+-- Table structure for `utentes`
 -- ----------------------------
 DROP TABLE IF EXISTS `utentes`;
 CREATE TABLE `utentes` (
@@ -295,22 +339,9 @@ CREATE TABLE `utentes` (
 -- ----------------------------
 -- Records of utentes
 -- ----------------------------
-INSERT INTO `utentes` VALUES ('catarina18@gmail.com', 'Catarina', 'Neto', 'Avenida Masterchef Sofá 3ºlugar', '932415161', '2013-11-12 22:17:13');
-INSERT INTO `utentes` VALUES ('jose@TEST.com', 'José', 'Sousa', 'Rua do José Sousa', '968986868', '2013-11-23 21:27:58');
-INSERT INTO `utentes` VALUES ('jose@TESTE.com', 'TESTE', 'TESTE', 'RUA TESTE', '952545246', '2013-11-26 23:33:37');
-INSERT INTO `utentes` VALUES ('jricvalerio@gmail.com', 'Joana', 'Serafim', 'Rua Particular à Estrada da Cruz Nº236', '952545246', '2013-11-26 23:04:58');
-INSERT INTO `utentes` VALUES ('maria45@hotmail.com', 'Maria', 'Sousa', 'Rua Particular à Estrada da Cruz nº 212', '961234321', '2013-11-12 22:13:47');
-INSERT INTO `utentes` VALUES ('migueltavares@gmail.com', 'Miguel', 'Tavares', 'Avenida João Garcia Nº 35 2º Esq', '912387456', '2013-11-12 22:15:34');
-INSERT INTO `utentes` VALUES ('pedro@fonseca.com', 'Pedro', 'Fonseca', 'Rua da Rua nº4 Loulé', '917547647', '2013-11-15 21:50:58');
-INSERT INTO `utentes` VALUES ('pedrogil@fonseca.com', 'Pedro', 'Fonseca', 'Rua da Rua nº4', '917547647', '2013-11-15 21:52:00');
-INSERT INTO `utentes` VALUES ('pedrogil@gmail.com', 'Pedro', 'Gil', 'Avenida da Boa Vida 3º Esq.', '912342345', '2013-11-12 22:11:35');
-INSERT INTO `utentes` VALUES ('rita@antunes.com', 'Rita', 'Antunes', 'Rua da Rainha das Ilhas das Cobras Nº13', '967877887', '2013-11-11 22:34:18');
-INSERT INTO `utentes` VALUES ('rui@santos.com', 'Rui', 'Santos', 'Rua da Santa Casa Nº234', '912344556', '2013-11-12 22:10:39');
-INSERT INTO `utentes` VALUES ('silvia_almeida@hotmail.com', 'Sílvia', 'Almeida', 'Rua da Dona Filomena 7ºC', '932451621', '2013-11-12 22:14:30');
-INSERT INTO `utentes` VALUES ('teste@teste.com', 'Joana TESTE', 'TESTE', 'RUA TESTE', '913198739', '2013-11-26 12:19:43');
 
 -- ----------------------------
--- Table structure for vantagens
+-- Table structure for `vantagens`
 -- ----------------------------
 DROP TABLE IF EXISTS `vantagens`;
 CREATE TABLE `vantagens` (
@@ -328,3 +359,9 @@ INSERT INTO `vantagens` VALUES ('2', 'Escolha dos melhores equipamentos e materi
 INSERT INTO `vantagens` VALUES ('3', 'Honestidade dos serviços', 'A principal vantagem da empresa.');
 INSERT INTO `vantagens` VALUES ('4', 'Marcação rápida de consultas', 'Em qualquer lugar através de email, ou por telefone, poderá marcar préviamente a sua consulta.');
 INSERT INTO `vantagens` VALUES ('5', 'Facilidades de pagamento', 'A Pseudo Clínica, desenvolveu soluções de pagamento até 12 meses sem qualquer juro ou entrada, e também parcerias com as maiores entidades bancárias do país no sentido de agelizar e oferecer um conjunto de vantagens exclusivas para os seus clientes.  \r\nContamos com excelentes condições para que possa concretizar o tratamento que tanto necessita, aliviando assim, de uma forma fácil o pagamento mensal dessa obrigação.');
+
+-- ----------------------------
+-- View structure for `view_historico_consultas`
+-- ----------------------------
+DROP VIEW IF EXISTS `view_historico_consultas`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_historico_consultas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from `consultas_realizadas` order by `consultas_realizadas`.`datetime_consulta_realizada` desc ;
