@@ -88,7 +88,7 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `consultas_marcadas` (
 
 LOCK TABLES `consultas_marcadas` WRITE;
 /*!40000 ALTER TABLE `consultas_marcadas` DISABLE KEYS */;
-INSERT INTO `consultas_marcadas` VALUES (17,'2013-12-01 19:44:56','12/02/2013','11:30',3,'joseperpetuo@gmail.com'),(18,'2013-12-01 19:46:41','12/03/2013','14:30',1,'joseperpetuo@gmail.com'),(19,'2013-12-01 20:02:05','12/02/2013','18:30',4,'saraneves@gmail.com'),(20,'2013-12-01 20:04:04','12/03/2013','11:30',10,'ruiesteves@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES (17,'2013-12-01 19:44:56','12/02/2013','11:30',3,'joseperpetuo@gmail.com'),(18,'2013-12-01 19:46:41','12/03/2013','14:30',1,'joseperpetuo@gmail.com'),(19,'2013-12-01 20:02:05','12/02/2013','18:30',4,'saraneves@gmail.com'),(20,'2013-12-01 20:04:04','12/03/2013','11:30',10,'ruiesteves@gmail.com'),(21,'2013-12-01 21:18:35','12/03/2013','11:30',16,'teresaguilherme@gmail.com');
 /*!40000 ALTER TABLE `consultas_marcadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,7 +261,7 @@ CREATE TABLE `questoes_online` (
   `mensagem` text COLLATE utf8_unicode_ci NOT NULL,
   `datetime_questao` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -270,7 +270,7 @@ CREATE TABLE `questoes_online` (
 
 LOCK TABLES `questoes_online` WRITE;
 /*!40000 ALTER TABLE `questoes_online` DISABLE KEYS */;
-INSERT INTO `questoes_online` VALUES (1,'Joana Caetano','juju@caetano.com','Porque é que o nosso planeta se chama terra e não água?','2013-11-11 22:22:46'),(5,'Pedro Fonseca','pedro@fonseca.com','Qual o tamanho do Universo?','2013-11-15 22:02:57');
+INSERT INTO `questoes_online` VALUES (1,'Joana Caetano','juju@caetano.com','Porque é que o nosso planeta se chama terra e não água?','2013-11-11 22:22:46'),(5,'Pedro Fonseca','pedro@fonseca.com','Qual o tamanho do Universo?','2013-11-15 22:02:57'),(6,'Francisco Costa','frxp@costa.com','Reparei no que fazem com as laranjas,.. se eu levar uma vaca, tiram-lhe o leite?','2013-12-01 21:09:05');
 /*!40000 ALTER TABLE `questoes_online` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,7 +298,7 @@ CREATE TABLE `utentes` (
 
 LOCK TABLES `utentes` WRITE;
 /*!40000 ALTER TABLE `utentes` DISABLE KEYS */;
-INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com','José','Perpétuo','Rua do José Perpétuo Nº234','923658778','2013-12-01 19:44:56'),('ruiesteves@gmail.com','Rui','Esteves','Rua do Rui Esteves Nº28','968728728','2013-12-01 20:04:04'),('saraneves@gmail.com','Sara','Neves','Rua da Sara Neves Nº231','912233445','2013-12-01 20:02:05');
+INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com','José','Perpétuo','Rua do José Perpétuo Nº234','923658778','2013-12-01 19:44:56'),('ruiesteves@gmail.com','Rui','Esteves','Rua do Rui Esteves Nº28','968728728','2013-12-01 20:04:04'),('saraneves@gmail.com','Sara','Neves','Rua da Sara Neves Nº231','912233445','2013-12-01 20:02:05'),('teresaguilherme@gmail.com','Teresa','Guilherme','Rua da Teresa Guilherme Nº76','919816988','2013-12-01 21:18:35');
 /*!40000 ALTER TABLE `utentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,30 +328,52 @@ INSERT INTO `vantagens` VALUES (1,'Médicos e técnicos com currículo profissio
 UNLOCK TABLES;
 
 --
--- Temporary table structure for view `view_historico_consultas`
+-- Temporary table structure for view `view_consultas_marcadas`
 --
 
-DROP TABLE IF EXISTS `view_historico_consultas`;
-/*!50001 DROP VIEW IF EXISTS `view_historico_consultas`*/;
+DROP TABLE IF EXISTS `view_consultas_marcadas`;
+/*!50001 DROP VIEW IF EXISTS `view_consultas_marcadas`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `view_historico_consultas` (
+/*!50001 CREATE TABLE `view_consultas_marcadas` (
+  `id` tinyint NOT NULL,
+  `datetime_confirmacao` tinyint NOT NULL,
+  `data_consulta` tinyint NOT NULL,
+  `hora_consulta` tinyint NOT NULL,
+  `medicos_id` tinyint NOT NULL,
+  `especialidade` tinyint NOT NULL,
+  `descricao_horario` tinyint NOT NULL,
+  `utentes_email` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `view_historico_consultas_realizadas`
+--
+
+DROP TABLE IF EXISTS `view_historico_consultas_realizadas`;
+/*!50001 DROP VIEW IF EXISTS `view_historico_consultas_realizadas`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_historico_consultas_realizadas` (
   `id` tinyint NOT NULL,
   `datetime_consulta_realizada` tinyint NOT NULL,
   `valor_consulta` tinyint NOT NULL,
   `diagnostico` tinyint NOT NULL,
   `prescricao` tinyint NOT NULL,
   `medicos_id` tinyint NOT NULL,
+  `especialidade` tinyint NOT NULL,
+  `descricao_horario` tinyint NOT NULL,
   `utentes_email` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
 --
--- Final view structure for view `view_historico_consultas`
+-- Final view structure for view `view_consultas_marcadas`
 --
 
-/*!50001 DROP TABLE IF EXISTS `view_historico_consultas`*/;
-/*!50001 DROP VIEW IF EXISTS `view_historico_consultas`*/;
+/*!50001 DROP TABLE IF EXISTS `view_consultas_marcadas`*/;
+/*!50001 DROP VIEW IF EXISTS `view_consultas_marcadas`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
@@ -360,7 +382,26 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_historico_consultas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from `consultas_realizadas` order by `consultas_realizadas`.`datetime_consulta_realizada` desc */;
+/*!50001 VIEW `view_consultas_marcadas` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from (((`consultas_marcadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_marcadas`.`medicos_id`) and (`medicos`.`horarios_id` = `horarios`.`id`) and (`medicos`.`especialidades_id` = `especialidades`.`id`)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_historico_consultas_realizadas`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_historico_consultas_realizadas`*/;
+/*!50001 DROP VIEW IF EXISTS `view_historico_consultas_realizadas`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_historico_consultas_realizadas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from (((`consultas_realizadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_realizadas`.`medicos_id`) and (`horarios`.`id` = `medicos`.`horarios_id`) and (`especialidades`.`id` = `medicos`.`especialidades_id`)) order by `consultas_realizadas`.`datetime_consulta_realizada` desc */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -374,4 +415,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-01 20:10:29
+-- Dump completed on 2013-12-01 21:30:54
