@@ -61,9 +61,9 @@ if (!empty($_POST)) {
 
             break;
       /////////////////////////////////////////////////////////////////////////////////////////////////////////
-          case 'consultas_com_marcacao_confirmada_a_realizar':
+          case 'consultas_marcadas':
               
-              $sql = "INSERT INTO consultas_com_marcacao_confirmada_a_realizar 
+              $sql = "INSERT INTO consultas_marcadas 
                           (datetime_confirmacao, 
                            data_consulta, 
                            hora_consulta, 

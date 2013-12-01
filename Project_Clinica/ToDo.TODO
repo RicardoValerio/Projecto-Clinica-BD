@@ -2,6 +2,55 @@
 
          ✔ uma vez Subconsultas e @done (13-11-21 20:26)
          ✔ Vistas @done (13-11-28 16:33)
+===========================================
+
+CREATE OR REPLACE VIEW 'view_consultas_marcadas' AS 
+SELECT  consultas_marcadas.id, 
+    consultas_marcadas.datetime_confirmacao,
+    consultas_marcadas.data_consulta,
+    consultas_marcadas.hora_consulta,
+    consultas_marcadas.medicos_id,
+    especialidades.especialidade,
+    horarios.descricao_horario,
+    consultas_marcadas.utentes_email
+FROM consultas_marcadas, 
+   medicos, 
+     especialidades,
+   horarios
+WHERE medicos.id = consultas_marcadas.medicos_id
+  AND medicos.horarios_id = horarios.id
+  AND medicos.especialidades_id = especialidades.id;
+
+=======================================
+
+CREATE OR REPLACE VIEW 'view_historico_consultas_realizadas' AS 
+SELECT 
+    consultas_realizadas.id,
+    consultas_realizadas.datetime_consulta_realizada,
+    consultas_realizadas.valor_consulta,
+    consultas_realizadas.diagnostico,
+    consultas_realizadas.prescricao,
+    consultas_realizadas.medicos_id,
+    especialidades.especialidade,
+    horarios.descricao_horario,
+    consultas_realizadas.utentes_email
+FROM consultas_realizadas,
+   medicos,
+   especialidades,
+   horarios
+WHERE medicos.id = consultas_realizadas.medicos_id
+AND horarios.id = medicos.horarios_id
+AND especialidades.id = medicos.especialidades_id
+ORDER BY datetime_consulta_realizada DESC;
+
+
+
+
+=======================================
+
+
+
+
 
 e ainda os comandos, cláusulas, operadores e funções seguintes:
  
@@ -13,7 +62,8 @@ Comandos:
  ✔ UPDATE @done (13-11-21 20:23)
  ✔ DELETE @done (13-11-21 20:23)
  ✔ SELECT @done (13-11-21 20:23)
-
+ 
+A meio do projecto criamos um campo adicional na tabela medicos. 
  ✔ ALTER @done (13-11-26 17:37)
                       ALTER TABLE `projecto_clinica`.`medicos` 
                       ADD COLUMN `salario_mensal` DECIMAL(7,2) NOT NULL AFTER `horarios_id`;

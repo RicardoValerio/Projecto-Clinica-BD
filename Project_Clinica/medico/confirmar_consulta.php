@@ -37,8 +37,8 @@
           // se a a query for executada com sucesso o seu numero de linha for superior a zero, então:
           if($insert_count = $connection->exec($sql)){
 
-              // armazena a query que irá eliminar o registo da consulta na tabela "consultas_com_marcacao_confirmada_a_realizar" que diz respeito ao registido acabado de ser inserido na tabela "consultas_realizadas"
-              $sql = "DELETE FROM consultas_com_marcacao_confirmada_a_realizar WHERE id=" . $_GET['pk'];
+              // armazena a query que irá eliminar o registo da consulta na tabela "consultas_marcadas" que diz respeito ao registido acabado de ser inserido na tabela "consultas_realizadas"
+              $sql = "DELETE FROM consultas_marcadas WHERE id=" . $_GET['pk'];
 
               // executa a query de elimanação de registo
               $connection->exec($sql);

@@ -120,7 +120,7 @@
           <hr />
           <div class="row">
             <div class="six columns">
-              <p>2012 Rv.</p>
+              <p>Lisboa, 2013 | UE - Base de Dados</p>
             </div>
             <div class="six columns">
               <ul class="link-list right">

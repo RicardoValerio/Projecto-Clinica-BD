@@ -51,9 +51,9 @@ require '../MODEL/databaseConnection.php';
 				        
 				      break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-				  case 'consultas_com_marcacao_confirmada_a_realizar':
+				  case 'consultas_marcadas':
 
-						      $sql = "UPDATE consultas_com_marcacao_confirmada_a_realizar 
+						      $sql = "UPDATE consultas_marcadas 
 						      			SET id=". $_POST['id'] .", 
 						      				datetime_confirmacao='". $_POST['datetime_confirmacao'] ."', 
 						      				data_consulta='". $_POST['data_consulta'] ."', 

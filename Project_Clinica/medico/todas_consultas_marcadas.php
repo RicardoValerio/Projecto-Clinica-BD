@@ -82,7 +82,7 @@
     <tr>
       <?php 
           
-          $sql = 'DESCRIBE consultas_com_marcacao_confirmada_a_realizar';
+          $sql = 'DESCRIBE consultas_marcadas';
           
           if ($result_set = $connection->query($sql)) {
           foreach ($result_set as $coluna) {    
@@ -100,11 +100,11 @@
           <?php 
         
         $sql = "SELECT * 
-                  FROM consultas_com_marcacao_confirmada_a_realizar 
+                  FROM consultas_marcadas 
                   WHERE medicos_id = (SELECT medicos_administracao_de_consultas.medicos_id 
                                     FROM medicos_administracao_de_consultas 
                                     WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "')
-                  ORDER BY data_consulta, hora_consulta";
+                  ORDER BY data_consulta ASC, hora_consulta ASC";
       
             if ($result_set = $connection->query($sql)) {
             foreach ($result_set as $coluna){ 

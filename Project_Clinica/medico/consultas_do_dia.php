@@ -83,8 +83,8 @@
     <tr>
 
 
-<!-- bloco de PHP que criar o header da tabela HTML com todos os campos da tabela "consultas_com_marcacao_confirmada_a_realizar" -->
-      <?php $sql = 'DESCRIBE consultas_com_marcacao_confirmada_a_realizar'; ?>
+<!-- bloco de PHP que criar o header da tabela HTML com todos os campos da tabela "consultas_marcadas" -->
+      <?php $sql = 'DESCRIBE consultas_marcadas'; ?>
 
          <?php if ($result_set = $connection->query($sql)): ?>
               <?php foreach ($result_set as $coluna): ?>
@@ -102,11 +102,11 @@
     <?php 
         $date = new DateTime();
         $sql = "SELECT * 
-                  FROM consultas_com_marcacao_confirmada_a_realizar 
+                  FROM consultas_marcadas 
                   WHERE data_consulta = '". $date->format('m/d/Y') ."' 
                   AND medicos_id = (SELECT medicos_administracao_de_consultas.medicos_id 
                   FROM medicos_administracao_de_consultas 
-                  WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "')";
+                  WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "') ORDER BY hora_consulta ASC";
     ?>
  
            <?php if ($result_set = $connection->query($sql)): ?>
@@ -122,7 +122,7 @@
                           <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>
                           
                           <td style="text-align: center; vertical-align: middle;">
-                            <!-- coloca um botão para cada linha iterada com um link que contem um ficheiro php que irá confirmar a realização da consulta e que passa como argumento a chave primária da tabela "consultas_com_marcacao_confirmada_a_realizar" e o email do utente que é chave primária da tabela "utentes" -->
+                            <!-- coloca um botão para cada linha iterada com um link que contem um ficheiro php que irá confirmar a realização da consulta e que passa como argumento a chave primária da tabela "consultas_marcadas" e o email do utente que é chave primária da tabela "utentes" -->
                           <a class=" radius success button" href="confirmar_consulta.php?pk=<?php echo $coluna[0];?>&ue=<?php echo $coluna[5];?>">Confirmar Realização</a>
                           </td>
 

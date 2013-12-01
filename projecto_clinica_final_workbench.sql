@@ -88,7 +88,7 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +97,7 @@ CREATE TABLE `consultas_marcadas` (
 
 LOCK TABLES `consultas_marcadas` WRITE;
 /*!40000 ALTER TABLE `consultas_marcadas` DISABLE KEYS */;
+INSERT INTO `consultas_marcadas` VALUES (17,'2013-12-01 19:44:56','12/02/2013','11:30',3,'joseperpetuo@gmail.com'),(18,'2013-12-01 19:46:41','12/03/2013','14:30',1,'joseperpetuo@gmail.com'),(19,'2013-12-01 20:02:05','12/02/2013','18:30',4,'saraneves@gmail.com'),(20,'2013-12-01 20:04:04','12/03/2013','11:30',10,'ruiesteves@gmail.com');
 /*!40000 ALTER TABLE `consultas_marcadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +270,7 @@ CREATE TABLE `questoes_online` (
 
 LOCK TABLES `questoes_online` WRITE;
 /*!40000 ALTER TABLE `questoes_online` DISABLE KEYS */;
-INSERT INTO `questoes_online` VALUES (1,'Joana Caetano','juju@caetano.com','Qual é a minha dúvida?','2013-11-11 22:22:46'),(5,'Pedro Fonseca','pedro@fonseca.com','Portugal?','2013-11-15 22:02:57');
+INSERT INTO `questoes_online` VALUES (1,'Joana Caetano','juju@caetano.com','Porque é que o nosso planeta se chama terra e não água?','2013-11-11 22:22:46'),(5,'Pedro Fonseca','pedro@fonseca.com','Qual o tamanho do Universo?','2013-11-15 22:02:57');
 /*!40000 ALTER TABLE `questoes_online` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,6 +298,7 @@ CREATE TABLE `utentes` (
 
 LOCK TABLES `utentes` WRITE;
 /*!40000 ALTER TABLE `utentes` DISABLE KEYS */;
+INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com','José','Perpétuo','Rua do José Perpétuo Nº234','923658778','2013-12-01 19:44:56'),('ruiesteves@gmail.com','Rui','Esteves','Rua do Rui Esteves Nº28','968728728','2013-12-01 20:04:04'),('saraneves@gmail.com','Sara','Neves','Rua da Sara Neves Nº231','912233445','2013-12-01 20:02:05');
 /*!40000 ALTER TABLE `utentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,4 +374,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-01 18:33:25
+-- Dump completed on 2013-12-01 20:10:29

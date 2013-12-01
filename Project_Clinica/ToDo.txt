@@ -1,15 +1,32 @@
-
-REVER TODO O PROJECTO E REFAZER COMENTÁRIOS SOBRE CADA FICHEIRO PARA DEPOIS COLOCAR NO RELATÓRIO
-
-
-===============================================================
-TENTAR MUDAR A QUERY DO FORMULARIO DE MARCAÇAO DE CONSULTAS
-
 ===============================================================
 PREENCHER TABELAS COM DADOS!!!
+=======================================
+1)
 
+Preencher as tabelas: 
+
+	"consultas marcadas" 
+	e  
+	"utentes"
+
+através do formulário;
+
+
+=======================================
+2)
+
+confirmar consultas como realizadas, no painel de cada médico!
+
+
+=======================================
+3)
+
+Acrescentar as queries que faltam!
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ===============================================================
 NO FIM DE TUDO:
+===============================================================
 			-> encontrar imagens
 

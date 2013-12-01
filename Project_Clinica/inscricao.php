@@ -10,30 +10,31 @@
       // echo "<pre>"; 
       // print_r($_POST);
       // echo "</pre> <br><br> "; 
-      // // die();
+      // die();
 
 
 // verifica se já existe o numero limite de consultas para uma determinada especialidade
  // numa determinada data, em determinada hora e em determinado horario
 
-$sql = " SELECT consultas_com_marcacao_confirmada_a_realizar.id,
-                consultas_com_marcacao_confirmada_a_realizar.datetime_confirmacao,
-                consultas_com_marcacao_confirmada_a_realizar.data_consulta,                 
-                consultas_com_marcacao_confirmada_a_realizar.hora_consulta,               
-                consultas_com_marcacao_confirmada_a_realizar.medicos_id,                 
-                consultas_com_marcacao_confirmada_a_realizar.utentes_email,
+$sql = "SELECT consultas_marcadas.id,
+                consultas_marcadas.datetime_confirmacao,
+                consultas_marcadas.data_consulta,                 
+                consultas_marcadas.hora_consulta,               
+                consultas_marcadas.medicos_id,                 
+                consultas_marcadas.utentes_email,
                 medicos.especialidades_id,
                 medicos.horarios_id          
-          FROM consultas_com_marcacao_confirmada_a_realizar 
+          FROM consultas_marcadas 
           INNER JOIN medicos              
-          ON medicos.id = consultas_com_marcacao_confirmada_a_realizar.medicos_id
+          ON medicos.id = consultas_marcadas.medicos_id
           AND medicos.especialidades_id = ". $_POST['especialidade'] ."
           AND medicos.horarios_id = ". $_POST['horario'] ."
-          AND consultas_com_marcacao_confirmada_a_realizar.data_consulta = '". $_POST['data'] ."'
-          AND consultas_com_marcacao_confirmada_a_realizar.hora_consulta = '". $_POST['horas'] .":". $_POST['minutos'] ."' ";
+          AND consultas_marcadas.data_consulta = '". $_POST['data'] ."'
+          AND consultas_marcadas.hora_consulta = '". $_POST['horas'] .":". $_POST['minutos'] ."'";
 
 
 $result_set = $connection->query($sql);
+
 
 
 // Sabendo que 2 é o numero máximo de consultórios para cada especialidade, 
@@ -88,10 +89,10 @@ if($result_set->rowCount() == 2){
                                   FROM medicos 
                                   WHERE medicos.id NOT IN 
                                   ( SELECT medicos_id 
-                                    FROM medicos, consultas_com_marcacao_confirmada_a_realizar 
+                                    FROM medicos, consultas_marcadas 
                                     WHERE medicos.especialidades_id = ". $_POST['especialidade'] ."
                                      AND medicos.horarios_id = ". $_POST['horario'] ."
-                                     AND consultas_com_marcacao_confirmada_a_realizar.data_consulta='". $_POST['data'] ."'
+                                     AND consultas_marcadas.data_consulta='". $_POST['data'] ."'
                                    )
                                   AND medicos.especialidades_id = ". $_POST['especialidade'] ." 
                                   AND medicos.horarios_id = ". $_POST['horario'];
@@ -104,7 +105,7 @@ if($result_set->rowCount() == 2){
    
 
     // criar a query que irá inserir a marcação de consulta
-    $sql_marcacao_consulta = "INSERT INTO consultas_com_marcacao_confirmada_a_realizar 
+    $sql_marcacao_consulta = "INSERT INTO consultas_marcadas 
                                   (datetime_confirmacao,
                                    data_consulta,
                                    hora_consulta,
@@ -389,7 +390,7 @@ Os nossos serviços irão receber o seu pedido de marcação de consulta ao qual
         <hr />
         <div class="row">
           <div class="six columns">
-            <p>2012 Rv.</p>
+            <p>Lisboa, 2013 | UE - Base de Dados</p>
           </div>
           <div class="six columns">
             <ul class="link-list right">
