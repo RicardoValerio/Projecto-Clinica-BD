@@ -476,7 +476,7 @@ Os nossos serviços irão receber o seu pedido de marcação de consulta ao qual
   
 // VERIFICAR PRIMEIRO NOME
 var PNome=document.getElementById('primeiro_nome_formulario');
-var checar_nome=/^([A-Z,a-z, ,.,ã,á,à,Â,â,ê,í,ú,õ,ó,é,ü,-]){2,130}$/;
+var checar_nome=/^([A-Z,a-z, ,.,ã,á,à,Â,Á,À,â,ê,í,ú,õ,ó,é,ü,-]){2,130}$/;
 
 PNome.onblur=function() {
   if(!checar_nome.test(PNome.value)){
@@ -507,7 +507,7 @@ UNome.onblur=function() {
 
 // VERIFICAR MORADA
 var Morada=document.getElementById('Morada_formulario');
-var checar_morada=/^([A-Z,a-z,0-9, ,.,ã,á,à,â,ê,í,ú,õ,ó,é,ü,º,ª,-]){2,130}$/;
+var checar_morada=/^([A-Z,a-z,0-9, ,.,ã,á,à,â,Á,À,ê,í,ú,õ,ó,é,ü,º,ª,-]){2,130}$/;
 
 Morada.onblur=function() {
   if(!checar_morada.test(Morada.value)){
