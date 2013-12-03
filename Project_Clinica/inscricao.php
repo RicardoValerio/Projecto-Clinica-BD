@@ -344,8 +344,8 @@ Os nossos serviços irão receber o seu pedido de marcação de consulta ao qual
             <div style="text-align: center;" id="horario_manha">
               
               <select style="width:60px;" name="horas" id="hora_select">
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
                 <option value="10">10</option>
                 <option value="11">11</option>
                 <option value="12">12</option>
@@ -569,6 +569,11 @@ setInterval(
       function(){
         if (document.getElementsByName('horario')[0].checked){
           for (var i = 0, j = 8; i < myOptions.length; i++, j++ ) {
+              if (j == 8 || j == 9) {
+                myOptions[i].value='0'+j;
+                myOptions[i].innerHTML='0'+j;
+                continue;
+              }
               myOptions[i].value=j;
               myOptions[i].innerHTML=j;
           }

@@ -104,7 +104,7 @@
                   WHERE medicos_id = (SELECT medicos_administracao_de_consultas.medicos_id 
                                     FROM medicos_administracao_de_consultas 
                                     WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "')
-                  ORDER BY data_consulta ASC, hora_consulta ASC";
+                  ORDER BY str_to_date(data_consulta, '%m/%d/%Y') ASC, hora_consulta ASC";
       
             if ($result_set = $connection->query($sql)) {
             foreach ($result_set as $coluna){ 

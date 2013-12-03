@@ -4,7 +4,7 @@
          ✔ Vistas @done (13-11-28 16:33)
 ===========================================
 
-CREATE OR REPLACE VIEW 'view_consultas_marcadas' AS 
+CREATE OR REPLACE VIEW view_consultas_marcadas AS 
 SELECT  consultas_marcadas.id, 
     consultas_marcadas.datetime_confirmacao,
     consultas_marcadas.data_consulta,
@@ -19,11 +19,12 @@ FROM consultas_marcadas,
    horarios
 WHERE medicos.id = consultas_marcadas.medicos_id
   AND medicos.horarios_id = horarios.id
-  AND medicos.especialidades_id = especialidades.id;
+  AND medicos.especialidades_id = especialidades.id
+ORDER BY str_to_date(data_consulta, '%m/%d/%Y') ASC, consultas_marcadas.hora_consulta ASC;
 
 =======================================
 
-CREATE OR REPLACE VIEW 'view_historico_consultas_realizadas' AS 
+CREATE OR REPLACE VIEW view_historico_consultas_realizadas AS 
 SELECT 
     consultas_realizadas.id,
     consultas_realizadas.datetime_consulta_realizada,
@@ -43,8 +44,29 @@ AND horarios.id = medicos.horarios_id
 AND especialidades.id = medicos.especialidades_id
 ORDER BY datetime_consulta_realizada DESC;
 
+=======================================
+
+CREATE VIEW view_emails_web_marketing
+AS SELECT email FROM utentes
+UNION
+SELECT email FROM questoes_online
+ORDER BY email;
+
+=======================================
+
+CREATE VIEW view_consultas_do_mes_currente AS
+SELECT * FROM consultas_marcadas 
+WHERE data_consulta 
+BETWEEN
+    DATE_FORMAT(DATE(NOW()), "%m/%d/%Y") 
+  AND DATE_FORMAT(LAST_DAY(now()), "%m/%d/%Y") 
+ORDER BY data_consulta ASC, hora_consulta ASC;
 
 
+=======================================
+
+CREATE VIEW view_telemoveis_96 AS 
+SELECT * FROM utentes WHERE contacto_tel LIKE '96%';
 
 =======================================
 
@@ -78,16 +100,16 @@ Cláusulas:
  ✔ ORDER BY @done (13-11-21 20:25)
  ☐ GROUP BY
  ☐ DISTINCT
- ☐ BETWEEN
+ ✔ BETWEEN @done (13-12-02 22:22)
 
 Operadores: 
  ✔ AND @done (13-11-21 20:25)
  ✔ OR @done (13-11-21 20:25)
  ✔ NOT @done (13-11-21 20:25)
  ✔ IN @done (13-11-21 20:25)
- ☐ LIKE
- ☐ UNION
- ☐ INTERSECT
+ ✔ LIKE @done (13-12-02 22:32)
+ ✔ UNION @done (13-12-02 21:31)
+ ☐ INTERSECT  // Comando inexistente em Mysql (pois apenas dá em SQL Server)
 
 Tentar usar isto com os salários dos médicos (para isso vou ter de adicionar um campo "salário mensal" à tabela médicos)
 Funções: 
