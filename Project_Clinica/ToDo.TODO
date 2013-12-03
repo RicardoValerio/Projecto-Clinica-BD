@@ -99,7 +99,7 @@ Cláusulas:
  ✔ ON DELETE CASCADE ou ON UPDATE CASCADE @done (13-11-26 17:40)
  ✔ ORDER BY @done (13-11-21 20:25)
  ☐ GROUP BY
- ☐ DISTINCT
+ ☐ DISTINCT  
  ✔ BETWEEN @done (13-12-02 22:22)
 
 Operadores: 
@@ -109,7 +109,6 @@ Operadores:
  ✔ IN @done (13-11-21 20:25)
  ✔ LIKE @done (13-12-02 22:32)
  ✔ UNION @done (13-12-02 21:31)
- ☐ INTERSECT  // Comando inexistente em Mysql (pois apenas dá em SQL Server)
 
 Tentar usar isto com os salários dos médicos (para isso vou ter de adicionar um campo "salário mensal" à tabela médicos)
 Funções: 

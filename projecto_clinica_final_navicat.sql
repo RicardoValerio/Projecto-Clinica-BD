@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-12-01 21:29:57
+Date: 2013-12-03 11:39:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `acordos`
+-- Table structure for acordos
 -- ----------------------------
 DROP TABLE IF EXISTS `acordos`;
 CREATE TABLE `acordos` (
@@ -48,7 +48,7 @@ INSERT INTO `acordos` VALUES ('15', '2013-10-26 23:41:10', 'tor', 'tor.png');
 INSERT INTO `acordos` VALUES ('16', '2013-10-27 00:16:56', 'ubuntu', 'ubuntu.png');
 
 -- ----------------------------
--- Table structure for `administradores`
+-- Table structure for administradores
 -- ----------------------------
 DROP TABLE IF EXISTS `administradores`;
 CREATE TABLE `administradores` (
@@ -66,7 +66,7 @@ INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-28 11:20:43
 INSERT INTO `administradores` VALUES ('2', 'super', 'root', '2013-11-12 20:31:39');
 
 -- ----------------------------
--- Table structure for `consultas_marcadas`
+-- Table structure for consultas_marcadas
 -- ----------------------------
 DROP TABLE IF EXISTS `consultas_marcadas`;
 CREATE TABLE `consultas_marcadas` (
@@ -81,19 +81,31 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_marcadas
 -- ----------------------------
-INSERT INTO `consultas_marcadas` VALUES ('17', '2013-12-01 19:44:56', '12/02/2013', '11:30', '3', 'joseperpetuo@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('18', '2013-12-01 19:46:41', '12/03/2013', '14:30', '1', 'joseperpetuo@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('19', '2013-12-01 20:02:05', '12/02/2013', '18:30', '4', 'saraneves@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('20', '2013-12-01 20:04:04', '12/03/2013', '11:30', '10', 'ruiesteves@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('21', '2013-12-01 21:18:35', '12/03/2013', '11:30', '16', 'teresaguilherme@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('22', '2013-12-02 15:01:32', '12/03/2013', '09:30', '3', 'diogoribeiro@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('23', '2013-12-02 15:04:01', '12/03/2013', '09:30', '5', 'alvarorocha@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('24', '2013-12-02 20:18:04', '12/17/2013', '17:30', '32', 'danielaoliveira@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('25', '2013-12-02 20:19:04', '12/15/2013', '18:30', '39', 'susanaarminda@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('26', '2013-12-02 20:20:03', '12/10/2013', '16:30', '43', 'hugosousa@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('27', '2013-12-02 20:20:48', '12/10/2013', '19:30', '12', 'filipeneves@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('28', '2013-12-02 20:21:45', '12/10/2013', '10:30', '38', 'pedrosilva@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('29', '2013-12-02 20:22:32', '12/10/2013', '11:00', '17', 'ivoalexandre@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('30', '2013-12-02 20:23:13', '12/10/2013', '11:00', '23', 'filipatavares@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('31', '2013-12-02 20:24:34', '12/11/2013', '11:00', '17', 'guilhermeontem@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('32', '2013-12-02 20:25:14', '12/11/2013', '11:00', '23', 'sofiacaramelo@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('33', '2013-12-02 21:32:49', '12/11/2013', '16:00', '27', 'juju@caetano.com');
+INSERT INTO `consultas_marcadas` VALUES ('34', '2013-12-02 22:18:49', '01/03/2014', '09:30', '3', 'pedroeustaquio@gmail.com');
 
 -- ----------------------------
--- Table structure for `consultas_realizadas`
+-- Table structure for consultas_realizadas
 -- ----------------------------
 DROP TABLE IF EXISTS `consultas_realizadas`;
 CREATE TABLE `consultas_realizadas` (
@@ -109,14 +121,15 @@ CREATE TABLE `consultas_realizadas` (
   KEY `fk_consultas_realizadas_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_realizadas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_realizadas_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_realizadas
 -- ----------------------------
+INSERT INTO `consultas_realizadas` VALUES ('1', '2013-12-02 14:58:19', '30.00', 'Cáries dentárias nos dentes molares.', 'Pasta de dentes Sensodyne.', '3', 'joseperpetuo@gmail.com');
 
 -- ----------------------------
--- Table structure for `especialidades`
+-- Table structure for especialidades
 -- ----------------------------
 DROP TABLE IF EXISTS `especialidades`;
 CREATE TABLE `especialidades` (
@@ -145,7 +158,7 @@ INSERT INTO `especialidades` VALUES ('14', 'Neurocirurgia', 'Neurocirurgia é a 
 INSERT INTO `especialidades` VALUES ('15', 'Terapia da Fala', 'A Terapia da fala, é a ciência que tem como objecto de estudo a comunicação humana. Não apenas os distúrbios da linguagem são do seu interesse, como também o modo de comunicação sádio e eficaz.', '35.00');
 
 -- ----------------------------
--- Table structure for `horarios`
+-- Table structure for horarios
 -- ----------------------------
 DROP TABLE IF EXISTS `horarios`;
 CREATE TABLE `horarios` (
@@ -161,7 +174,7 @@ INSERT INTO `horarios` VALUES ('1', 'Manhã');
 INSERT INTO `horarios` VALUES ('2', 'Tarde');
 
 -- ----------------------------
--- Table structure for `medicos`
+-- Table structure for medicos
 -- ----------------------------
 DROP TABLE IF EXISTS `medicos`;
 CREATE TABLE `medicos` (
@@ -238,7 +251,7 @@ INSERT INTO `medicos` VALUES ('52', 'Carla', 'Dias', 'carla@dias.com', '91858787
 INSERT INTO `medicos` VALUES ('53', 'Paulo', 'Bento', 'paulinho@bento.com', '923452617', 'android.png', '14', '2', '971.00');
 
 -- ----------------------------
--- Table structure for `medicos_administracao_de_consultas`
+-- Table structure for medicos_administracao_de_consultas
 -- ----------------------------
 DROP TABLE IF EXISTS `medicos_administracao_de_consultas`;
 CREATE TABLE `medicos_administracao_de_consultas` (
@@ -257,8 +270,8 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 -- ----------------------------
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor_1', 'secret', '2013-11-28 16:40:51', '1');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('2', 'doctor_2', 'secret', '2013-11-28 12:09:31', '2');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'doctor_3', 'secret', '2013-11-28 12:09:31', '3');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('4', 'doctor_4', 'secret', '2013-11-28 12:09:31', '4');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'doctor_3', 'secret', '2013-12-02 14:58:53', '3');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('4', 'doctor_4', 'secret', '2013-12-02 14:59:16', '4');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('5', 'doctor_5', 'secret', '2013-11-28 12:09:31', '5');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('6', 'doctor_6', 'secret', '2013-11-28 12:09:31', '6');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('7', 'doctor_7', 'secret', '2013-11-28 12:09:31', '7');
@@ -267,7 +280,7 @@ INSERT INTO `medicos_administracao_de_consultas` VALUES ('9', 'doctor_9', 'secre
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('10', 'doctor_10', 'secret', '2013-11-28 12:09:31', '10');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('11', 'doctor_11', 'secret', '2013-11-28 12:09:31', '11');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('12', 'doctor_12', 'secret', '2013-11-28 12:09:31', '12');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('13', 'doctor_13', 'secret', '2013-11-28 21:08:19', '13');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('13', 'doctor_13', 'secret', '2013-12-03 11:21:04', '13');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('14', 'doctor_14', 'secret', '2013-11-28 12:09:31', '14');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('15', 'doctor_15', 'secret', '2013-11-28 12:09:31', '15');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('16', 'doctor_16', 'secret', '2013-11-28 12:09:31', '16');
@@ -309,7 +322,7 @@ INSERT INTO `medicos_administracao_de_consultas` VALUES ('51', 'doctor_52', 'sec
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('52', 'doctor_53', 'secret', '2013-11-28 12:09:33', '53');
 
 -- ----------------------------
--- Table structure for `questoes_online`
+-- Table structure for questoes_online
 -- ----------------------------
 DROP TABLE IF EXISTS `questoes_online`;
 CREATE TABLE `questoes_online` (
@@ -329,7 +342,7 @@ INSERT INTO `questoes_online` VALUES ('5', 'Pedro Fonseca', 'pedro@fonseca.com',
 INSERT INTO `questoes_online` VALUES ('6', 'Francisco Costa', 'frxp@costa.com', 'Reparei no que fazem com as laranjas,.. se eu levar uma vaca, tiram-lhe o leite?', '2013-12-01 21:09:05');
 
 -- ----------------------------
--- Table structure for `utentes`
+-- Table structure for utentes
 -- ----------------------------
 DROP TABLE IF EXISTS `utentes`;
 CREATE TABLE `utentes` (
@@ -345,13 +358,26 @@ CREATE TABLE `utentes` (
 -- ----------------------------
 -- Records of utentes
 -- ----------------------------
+INSERT INTO `utentes` VALUES ('alvarorocha@gmail.com', 'Álvaro', 'Rocha', 'Rua do Álvaro Rocha Nº23', '911929292', '2013-12-02 15:04:00');
+INSERT INTO `utentes` VALUES ('danielaoliveira@gmail.com', 'Daniela', 'Oliveira', 'Rua da Daniela Oliveira Nº55', '919192929', '2013-12-02 20:18:03');
+INSERT INTO `utentes` VALUES ('diogoribeiro@gmail.com', 'Diogo', 'Ribeiro', 'Rua do Diogo Ribeiro Nº12', '912929299', '2013-12-02 15:01:31');
+INSERT INTO `utentes` VALUES ('filipatavares@gmail.com', 'Filipa', 'Tavares', 'Rua da Filipa Tavares Nº28', '926757567', '2013-12-02 20:23:13');
+INSERT INTO `utentes` VALUES ('filipeneves@gmail.com', 'Filipe', 'Neves', 'Rua do Filipe Neves Nº198', '918190819', '2013-12-02 20:20:48');
+INSERT INTO `utentes` VALUES ('guilhermeontem@gmail.com', 'Guilherme', 'Ontem', 'Rua do Guilherme Ontem Nº12', '969872888', '2013-12-02 20:24:34');
+INSERT INTO `utentes` VALUES ('hugosousa@gmail.com', 'Hugo', 'Sousa', 'Rua do Hugo Sousa Nº34', '912982989', '2013-12-02 20:20:03');
+INSERT INTO `utentes` VALUES ('ivoalexandre@gmail.com', 'Ivo', 'Alexandre', 'Rua do Ivo Alexandre Nº76', '928789787', '2013-12-02 20:22:32');
 INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com', 'José', 'Perpétuo', 'Rua do José Perpétuo Nº234', '923658778', '2013-12-01 19:44:56');
+INSERT INTO `utentes` VALUES ('juju@caetano.com', 'Joana', 'Caetano', 'Rua da Joana Caetano Nº28', '912896296', '2013-12-02 21:32:49');
+INSERT INTO `utentes` VALUES ('pedroeustaquio@gmail.com', 'Pedro', 'Eustáquio', 'Rua do Pedro Eustáquio Nº675', '925451645', '2013-12-02 22:18:49');
+INSERT INTO `utentes` VALUES ('pedrosilva@gmail.com', 'Pedro', 'Silva', 'Rua do Pedro Silva Nº97', '912982982', '2013-12-02 20:21:45');
 INSERT INTO `utentes` VALUES ('ruiesteves@gmail.com', 'Rui', 'Esteves', 'Rua do Rui Esteves Nº28', '968728728', '2013-12-01 20:04:04');
 INSERT INTO `utentes` VALUES ('saraneves@gmail.com', 'Sara', 'Neves', 'Rua da Sara Neves Nº231', '912233445', '2013-12-01 20:02:05');
+INSERT INTO `utentes` VALUES ('sofiacaramelo@gmail.com', 'Sofia', 'Caramelo', 'Rua da Sofia Caramelo Nº78', '917826786', '2013-12-02 20:25:14');
+INSERT INTO `utentes` VALUES ('susanaarminda@gmail.com', 'Susana', 'Arminda', 'Rua da Susana Arminda Nº90', '965498398', '2013-12-02 20:19:04');
 INSERT INTO `utentes` VALUES ('teresaguilherme@gmail.com', 'Teresa', 'Guilherme', 'Rua da Teresa Guilherme Nº76', '919816988', '2013-12-01 21:18:35');
 
 -- ----------------------------
--- Table structure for `vantagens`
+-- Table structure for vantagens
 -- ----------------------------
 DROP TABLE IF EXISTS `vantagens`;
 CREATE TABLE `vantagens` (
@@ -371,13 +397,31 @@ INSERT INTO `vantagens` VALUES ('4', 'Marcação rápida de consultas', 'Em qual
 INSERT INTO `vantagens` VALUES ('5', 'Facilidades de pagamento', 'A Pseudo Clínica, desenvolveu soluções de pagamento até 12 meses sem qualquer juro ou entrada, e também parcerias com as maiores entidades bancárias do país no sentido de agelizar e oferecer um conjunto de vantagens exclusivas para os seus clientes.  \r\nContamos com excelentes condições para que possa concretizar o tratamento que tanto necessita, aliviando assim, de uma forma fácil o pagamento mensal dessa obrigação.');
 
 -- ----------------------------
--- View structure for `view_consultas_marcadas`
+-- View structure for view_consultas_do_mes_currente
 -- ----------------------------
-DROP VIEW IF EXISTS `view_consultas_marcadas`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_consultas_marcadas` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from (((`consultas_marcadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_marcadas`.`medicos_id`) and (`medicos`.`horarios_id` = `horarios`.`id`) and (`medicos`.`especialidades_id` = `especialidades`.`id`)) ;
+DROP VIEW IF EXISTS `view_consultas_do_mes_currente`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_consultas_do_mes_currente` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from `consultas_marcadas` where (`consultas_marcadas`.`data_consulta` between date_format(cast(now() as date),'%m/%d/%Y') and date_format(last_day(now()),'%m/%d/%Y')) order by `consultas_marcadas`.`data_consulta`,`consultas_marcadas`.`hora_consulta` ;
 
 -- ----------------------------
--- View structure for `view_historico_consultas_realizadas`
+-- View structure for view_consultas_marcadas
+-- ----------------------------
+DROP VIEW IF EXISTS `view_consultas_marcadas`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_consultas_marcadas` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from (((`consultas_marcadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_marcadas`.`medicos_id`) and (`medicos`.`horarios_id` = `horarios`.`id`) and (`medicos`.`especialidades_id` = `especialidades`.`id`)) order by str_to_date(`consultas_marcadas`.`data_consulta`,'%m/%d/%Y'),`consultas_marcadas`.`hora_consulta` ;
+
+-- ----------------------------
+-- View structure for view_emails_web_marketing
+-- ----------------------------
+DROP VIEW IF EXISTS `view_emails_web_marketing`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_emails_web_marketing` AS select `utentes`.`email` AS `email` from `utentes` union select `questoes_online`.`email` AS `email` from `questoes_online` order by `email` ;
+
+-- ----------------------------
+-- View structure for view_historico_consultas_realizadas
 -- ----------------------------
 DROP VIEW IF EXISTS `view_historico_consultas_realizadas`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_historico_consultas_realizadas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from (((`consultas_realizadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_realizadas`.`medicos_id`) and (`horarios`.`id` = `medicos`.`horarios_id`) and (`especialidades`.`id` = `medicos`.`especialidades_id`)) order by `consultas_realizadas`.`datetime_consulta_realizada` desc ;
+
+-- ----------------------------
+-- View structure for view_telemoveis_96
+-- ----------------------------
+DROP VIEW IF EXISTS `view_telemoveis_96`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_telemoveis_96` AS select `utentes`.`email` AS `email`,`utentes`.`primeiro_nome` AS `primeiro_nome`,`utentes`.`ultimo_nome` AS `ultimo_nome`,`utentes`.`morada` AS `morada`,`utentes`.`contacto_tel` AS `contacto_tel`,`utentes`.`datetime_registo` AS `datetime_registo` from `utentes` where (`utentes`.`contacto_tel` like '96%') ;

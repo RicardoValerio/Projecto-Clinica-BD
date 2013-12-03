@@ -88,7 +88,7 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `consultas_marcadas` (
 
 LOCK TABLES `consultas_marcadas` WRITE;
 /*!40000 ALTER TABLE `consultas_marcadas` DISABLE KEYS */;
-INSERT INTO `consultas_marcadas` VALUES (17,'2013-12-01 19:44:56','12/02/2013','11:30',3,'joseperpetuo@gmail.com'),(18,'2013-12-01 19:46:41','12/03/2013','14:30',1,'joseperpetuo@gmail.com'),(19,'2013-12-01 20:02:05','12/02/2013','18:30',4,'saraneves@gmail.com'),(20,'2013-12-01 20:04:04','12/03/2013','11:30',10,'ruiesteves@gmail.com'),(21,'2013-12-01 21:18:35','12/03/2013','11:30',16,'teresaguilherme@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES (18,'2013-12-01 19:46:41','12/03/2013','14:30',1,'joseperpetuo@gmail.com'),(19,'2013-12-01 20:02:05','12/02/2013','18:30',4,'saraneves@gmail.com'),(20,'2013-12-01 20:04:04','12/03/2013','11:30',10,'ruiesteves@gmail.com'),(21,'2013-12-01 21:18:35','12/03/2013','11:30',16,'teresaguilherme@gmail.com'),(22,'2013-12-02 15:01:32','12/03/2013','09:30',3,'diogoribeiro@gmail.com'),(23,'2013-12-02 15:04:01','12/03/2013','09:30',5,'alvarorocha@gmail.com'),(24,'2013-12-02 20:18:04','12/17/2013','17:30',32,'danielaoliveira@gmail.com'),(25,'2013-12-02 20:19:04','12/15/2013','18:30',39,'susanaarminda@gmail.com'),(26,'2013-12-02 20:20:03','12/10/2013','16:30',43,'hugosousa@gmail.com'),(27,'2013-12-02 20:20:48','12/10/2013','19:30',12,'filipeneves@gmail.com'),(28,'2013-12-02 20:21:45','12/10/2013','10:30',38,'pedrosilva@gmail.com'),(29,'2013-12-02 20:22:32','12/10/2013','11:00',17,'ivoalexandre@gmail.com'),(30,'2013-12-02 20:23:13','12/10/2013','11:00',23,'filipatavares@gmail.com'),(31,'2013-12-02 20:24:34','12/11/2013','11:00',17,'guilhermeontem@gmail.com'),(32,'2013-12-02 20:25:14','12/11/2013','11:00',23,'sofiacaramelo@gmail.com'),(33,'2013-12-02 21:32:49','12/11/2013','16:00',27,'juju@caetano.com'),(34,'2013-12-02 22:18:49','01/03/2014','09:30',3,'pedroeustaquio@gmail.com');
 /*!40000 ALTER TABLE `consultas_marcadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `consultas_realizadas` (
   KEY `fk_consultas_realizadas_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_realizadas_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_realizadas_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,6 +130,7 @@ CREATE TABLE `consultas_realizadas` (
 
 LOCK TABLES `consultas_realizadas` WRITE;
 /*!40000 ALTER TABLE `consultas_realizadas` DISABLE KEYS */;
+INSERT INTO `consultas_realizadas` VALUES (1,'2013-12-02 14:58:19',30.00,'Cáries dentárias nos dentes molares.','Pasta de dentes Sensodyne.',3,'joseperpetuo@gmail.com');
 /*!40000 ALTER TABLE `consultas_realizadas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +244,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 
 LOCK TABLES `medicos_administracao_de_consultas` WRITE;
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` DISABLE KEYS */;
-INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor_1','secret','2013-11-28 16:40:51',1),(2,'doctor_2','secret','2013-11-28 12:09:31',2),(3,'doctor_3','secret','2013-11-28 12:09:31',3),(4,'doctor_4','secret','2013-11-28 12:09:31',4),(5,'doctor_5','secret','2013-11-28 12:09:31',5),(6,'doctor_6','secret','2013-11-28 12:09:31',6),(7,'doctor_7','secret','2013-11-28 12:09:31',7),(8,'doctor_8','secret','2013-11-28 12:09:31',8),(9,'doctor_9','secret','2013-11-28 12:09:31',9),(10,'doctor_10','secret','2013-11-28 12:09:31',10),(11,'doctor_11','secret','2013-11-28 12:09:31',11),(12,'doctor_12','secret','2013-11-28 12:09:31',12),(13,'doctor_13','secret','2013-11-28 21:08:19',13),(14,'doctor_14','secret','2013-11-28 12:09:31',14),(15,'doctor_15','secret','2013-11-28 12:09:31',15),(16,'doctor_16','secret','2013-11-28 12:09:31',16),(17,'doctor_17','secret','2013-11-28 12:09:31',17),(18,'doctor_18','secret','2013-11-28 12:09:31',18),(19,'doctor_20','secret','2013-11-28 12:11:03',20),(20,'doctor_21','secret','2013-11-28 12:09:32',21),(21,'doctor_22','secret','2013-11-28 12:09:32',22),(22,'doctor_23','secret','2013-11-28 12:10:43',23),(23,'doctor_24','secret','2013-11-28 12:09:32',24),(24,'doctor_25','secret','2013-11-28 12:09:32',25),(25,'doctor_26','secret','2013-11-28 12:09:32',26),(26,'doctor_27','secret','2013-11-28 12:09:32',27),(27,'doctor_28','secret','2013-11-28 12:09:32',28),(28,'doctor_29','secret','2013-11-28 12:09:32',29),(29,'doctor_30','secret','2013-11-28 12:09:32',30),(30,'doctor_31','secret','2013-11-28 12:09:32',31),(31,'doctor_32','secret','2013-11-28 12:09:32',32),(32,'doctor_33','secret','2013-11-28 12:09:32',33),(33,'doctor_34','secret','2013-11-28 12:09:32',34),(34,'doctor_35','secret','2013-11-28 12:09:32',35),(35,'doctor_36','secret','2013-11-28 12:09:32',36),(36,'doctor_37','secret','2013-11-28 12:09:32',37),(37,'doctor_38','secret','2013-11-28 12:09:32',38),(38,'doctor_39','secret','2013-11-28 12:09:32',39),(39,'doctor_40','secret','2013-11-28 12:09:32',40),(40,'doctor_41','secret','2013-11-28 12:09:33',41),(41,'doctor_42','secret','2013-11-28 12:09:33',42),(42,'doctor_43','secret','2013-11-28 12:09:33',43),(43,'doctor_44','secret','2013-11-28 12:09:33',44),(44,'doctor_45','secret','2013-11-28 12:09:33',45),(45,'doctor_46','secret','2013-11-28 12:09:33',46),(46,'doctor_47','secret','2013-11-28 12:09:33',47),(47,'doctor_48','secret','2013-11-28 12:09:33',48),(48,'doctor_49','secret','2013-11-28 12:09:33',49),(49,'doctor_50','secret','2013-11-28 12:09:33',50),(50,'doctor_51','secret','2013-11-28 12:09:33',51),(51,'doctor_52','secret','2013-11-28 12:09:33',52),(52,'doctor_53','secret','2013-11-28 12:09:33',53);
+INSERT INTO `medicos_administracao_de_consultas` VALUES (1,'doctor_1','secret','2013-11-28 16:40:51',1),(2,'doctor_2','secret','2013-11-28 12:09:31',2),(3,'doctor_3','secret','2013-12-02 14:58:53',3),(4,'doctor_4','secret','2013-12-02 14:59:16',4),(5,'doctor_5','secret','2013-11-28 12:09:31',5),(6,'doctor_6','secret','2013-11-28 12:09:31',6),(7,'doctor_7','secret','2013-11-28 12:09:31',7),(8,'doctor_8','secret','2013-11-28 12:09:31',8),(9,'doctor_9','secret','2013-11-28 12:09:31',9),(10,'doctor_10','secret','2013-11-28 12:09:31',10),(11,'doctor_11','secret','2013-11-28 12:09:31',11),(12,'doctor_12','secret','2013-11-28 12:09:31',12),(13,'doctor_13','secret','2013-12-03 11:21:04',13),(14,'doctor_14','secret','2013-11-28 12:09:31',14),(15,'doctor_15','secret','2013-11-28 12:09:31',15),(16,'doctor_16','secret','2013-11-28 12:09:31',16),(17,'doctor_17','secret','2013-11-28 12:09:31',17),(18,'doctor_18','secret','2013-11-28 12:09:31',18),(19,'doctor_20','secret','2013-11-28 12:11:03',20),(20,'doctor_21','secret','2013-11-28 12:09:32',21),(21,'doctor_22','secret','2013-11-28 12:09:32',22),(22,'doctor_23','secret','2013-11-28 12:10:43',23),(23,'doctor_24','secret','2013-11-28 12:09:32',24),(24,'doctor_25','secret','2013-11-28 12:09:32',25),(25,'doctor_26','secret','2013-11-28 12:09:32',26),(26,'doctor_27','secret','2013-11-28 12:09:32',27),(27,'doctor_28','secret','2013-11-28 12:09:32',28),(28,'doctor_29','secret','2013-11-28 12:09:32',29),(29,'doctor_30','secret','2013-11-28 12:09:32',30),(30,'doctor_31','secret','2013-11-28 12:09:32',31),(31,'doctor_32','secret','2013-11-28 12:09:32',32),(32,'doctor_33','secret','2013-11-28 12:09:32',33),(33,'doctor_34','secret','2013-11-28 12:09:32',34),(34,'doctor_35','secret','2013-11-28 12:09:32',35),(35,'doctor_36','secret','2013-11-28 12:09:32',36),(36,'doctor_37','secret','2013-11-28 12:09:32',37),(37,'doctor_38','secret','2013-11-28 12:09:32',38),(38,'doctor_39','secret','2013-11-28 12:09:32',39),(39,'doctor_40','secret','2013-11-28 12:09:32',40),(40,'doctor_41','secret','2013-11-28 12:09:33',41),(41,'doctor_42','secret','2013-11-28 12:09:33',42),(42,'doctor_43','secret','2013-11-28 12:09:33',43),(43,'doctor_44','secret','2013-11-28 12:09:33',44),(44,'doctor_45','secret','2013-11-28 12:09:33',45),(45,'doctor_46','secret','2013-11-28 12:09:33',46),(46,'doctor_47','secret','2013-11-28 12:09:33',47),(47,'doctor_48','secret','2013-11-28 12:09:33',48),(48,'doctor_49','secret','2013-11-28 12:09:33',49),(49,'doctor_50','secret','2013-11-28 12:09:33',50),(50,'doctor_51','secret','2013-11-28 12:09:33',51),(51,'doctor_52','secret','2013-11-28 12:09:33',52),(52,'doctor_53','secret','2013-11-28 12:09:33',53);
 /*!40000 ALTER TABLE `medicos_administracao_de_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,7 +299,7 @@ CREATE TABLE `utentes` (
 
 LOCK TABLES `utentes` WRITE;
 /*!40000 ALTER TABLE `utentes` DISABLE KEYS */;
-INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com','José','Perpétuo','Rua do José Perpétuo Nº234','923658778','2013-12-01 19:44:56'),('ruiesteves@gmail.com','Rui','Esteves','Rua do Rui Esteves Nº28','968728728','2013-12-01 20:04:04'),('saraneves@gmail.com','Sara','Neves','Rua da Sara Neves Nº231','912233445','2013-12-01 20:02:05'),('teresaguilherme@gmail.com','Teresa','Guilherme','Rua da Teresa Guilherme Nº76','919816988','2013-12-01 21:18:35');
+INSERT INTO `utentes` VALUES ('alvarorocha@gmail.com','Álvaro','Rocha','Rua do Álvaro Rocha Nº23','911929292','2013-12-02 15:04:00'),('danielaoliveira@gmail.com','Daniela','Oliveira','Rua da Daniela Oliveira Nº55','919192929','2013-12-02 20:18:03'),('diogoribeiro@gmail.com','Diogo','Ribeiro','Rua do Diogo Ribeiro Nº12','912929299','2013-12-02 15:01:31'),('filipatavares@gmail.com','Filipa','Tavares','Rua da Filipa Tavares Nº28','926757567','2013-12-02 20:23:13'),('filipeneves@gmail.com','Filipe','Neves','Rua do Filipe Neves Nº198','918190819','2013-12-02 20:20:48'),('guilhermeontem@gmail.com','Guilherme','Ontem','Rua do Guilherme Ontem Nº12','969872888','2013-12-02 20:24:34'),('hugosousa@gmail.com','Hugo','Sousa','Rua do Hugo Sousa Nº34','912982989','2013-12-02 20:20:03'),('ivoalexandre@gmail.com','Ivo','Alexandre','Rua do Ivo Alexandre Nº76','928789787','2013-12-02 20:22:32'),('joseperpetuo@gmail.com','José','Perpétuo','Rua do José Perpétuo Nº234','923658778','2013-12-01 19:44:56'),('juju@caetano.com','Joana','Caetano','Rua da Joana Caetano Nº28','912896296','2013-12-02 21:32:49'),('pedroeustaquio@gmail.com','Pedro','Eustáquio','Rua do Pedro Eustáquio Nº675','925451645','2013-12-02 22:18:49'),('pedrosilva@gmail.com','Pedro','Silva','Rua do Pedro Silva Nº97','912982982','2013-12-02 20:21:45'),('ruiesteves@gmail.com','Rui','Esteves','Rua do Rui Esteves Nº28','968728728','2013-12-01 20:04:04'),('saraneves@gmail.com','Sara','Neves','Rua da Sara Neves Nº231','912233445','2013-12-01 20:02:05'),('sofiacaramelo@gmail.com','Sofia','Caramelo','Rua da Sofia Caramelo Nº78','917826786','2013-12-02 20:25:14'),('susanaarminda@gmail.com','Susana','Arminda','Rua da Susana Arminda Nº90','965498398','2013-12-02 20:19:04'),('teresaguilherme@gmail.com','Teresa','Guilherme','Rua da Teresa Guilherme Nº76','919816988','2013-12-01 21:18:35');
 /*!40000 ALTER TABLE `utentes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,6 +329,24 @@ INSERT INTO `vantagens` VALUES (1,'Médicos e técnicos com currículo profissio
 UNLOCK TABLES;
 
 --
+-- Temporary table structure for view `view_consultas_do_mes_currente`
+--
+
+DROP TABLE IF EXISTS `view_consultas_do_mes_currente`;
+/*!50001 DROP VIEW IF EXISTS `view_consultas_do_mes_currente`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_consultas_do_mes_currente` (
+  `id` tinyint NOT NULL,
+  `datetime_confirmacao` tinyint NOT NULL,
+  `data_consulta` tinyint NOT NULL,
+  `hora_consulta` tinyint NOT NULL,
+  `medicos_id` tinyint NOT NULL,
+  `utentes_email` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary table structure for view `view_consultas_marcadas`
 --
 
@@ -344,6 +363,19 @@ SET character_set_client = utf8;
   `especialidade` tinyint NOT NULL,
   `descricao_horario` tinyint NOT NULL,
   `utentes_email` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary table structure for view `view_emails_web_marketing`
+--
+
+DROP TABLE IF EXISTS `view_emails_web_marketing`;
+/*!50001 DROP VIEW IF EXISTS `view_emails_web_marketing`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_emails_web_marketing` (
+  `email` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -369,6 +401,43 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary table structure for view `view_telemoveis_96`
+--
+
+DROP TABLE IF EXISTS `view_telemoveis_96`;
+/*!50001 DROP VIEW IF EXISTS `view_telemoveis_96`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `view_telemoveis_96` (
+  `email` tinyint NOT NULL,
+  `primeiro_nome` tinyint NOT NULL,
+  `ultimo_nome` tinyint NOT NULL,
+  `morada` tinyint NOT NULL,
+  `contacto_tel` tinyint NOT NULL,
+  `datetime_registo` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_consultas_do_mes_currente`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_consultas_do_mes_currente`*/;
+/*!50001 DROP VIEW IF EXISTS `view_consultas_do_mes_currente`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_consultas_do_mes_currente` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from `consultas_marcadas` where (`consultas_marcadas`.`data_consulta` between date_format(cast(now() as date),'%m/%d/%Y') and date_format(last_day(now()),'%m/%d/%Y')) order by `consultas_marcadas`.`data_consulta`,`consultas_marcadas`.`hora_consulta` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `view_consultas_marcadas`
 --
 
@@ -382,7 +451,26 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_consultas_marcadas` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from (((`consultas_marcadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_marcadas`.`medicos_id`) and (`medicos`.`horarios_id` = `horarios`.`id`) and (`medicos`.`especialidades_id` = `especialidades`.`id`)) */;
+/*!50001 VIEW `view_consultas_marcadas` AS select `consultas_marcadas`.`id` AS `id`,`consultas_marcadas`.`datetime_confirmacao` AS `datetime_confirmacao`,`consultas_marcadas`.`data_consulta` AS `data_consulta`,`consultas_marcadas`.`hora_consulta` AS `hora_consulta`,`consultas_marcadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_marcadas`.`utentes_email` AS `utentes_email` from (((`consultas_marcadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_marcadas`.`medicos_id`) and (`medicos`.`horarios_id` = `horarios`.`id`) and (`medicos`.`especialidades_id` = `especialidades`.`id`)) order by str_to_date(`consultas_marcadas`.`data_consulta`,'%m/%d/%Y'),`consultas_marcadas`.`hora_consulta` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_emails_web_marketing`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_emails_web_marketing`*/;
+/*!50001 DROP VIEW IF EXISTS `view_emails_web_marketing`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_emails_web_marketing` AS select `utentes`.`email` AS `email` from `utentes` union select `questoes_online`.`email` AS `email` from `questoes_online` order by `email` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -405,6 +493,25 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_telemoveis_96`
+--
+
+/*!50001 DROP TABLE IF EXISTS `view_telemoveis_96`*/;
+/*!50001 DROP VIEW IF EXISTS `view_telemoveis_96`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_telemoveis_96` AS select `utentes`.`email` AS `email`,`utentes`.`primeiro_nome` AS `primeiro_nome`,`utentes`.`ultimo_nome` AS `ultimo_nome`,`utentes`.`morada` AS `morada`,`utentes`.`contacto_tel` AS `contacto_tel`,`utentes`.`datetime_registo` AS `datetime_registo` from `utentes` where (`utentes`.`contacto_tel` like '96%') */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -415,4 +522,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-01 21:30:54
+-- Dump completed on 2013-12-03 11:40:30
