@@ -4,8 +4,8 @@
 // banco de dados, host e base de dados a usar.
 $dsn = 'mysql:host=localhost;dbname=projecto_clinica';
 
-$username = 'projecto';
-$passwd = 'pass';
+$username = 'projecto_clinica';
+$passwd = 'secret';
 
 /////////////////////////////////////////////////
 //                PHP DATA OBJECTS

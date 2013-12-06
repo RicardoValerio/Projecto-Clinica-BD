@@ -87,6 +87,7 @@ Comandos:
  
 A meio do projecto criamos um campo adicional na tabela medicos. 
  ✔ ALTER @done (13-11-26 17:37)
+                      
                       ALTER TABLE `projecto_clinica`.`medicos` 
                       ADD COLUMN `salario_mensal` DECIMAL(7,2) NOT NULL AFTER `horarios_id`;
 

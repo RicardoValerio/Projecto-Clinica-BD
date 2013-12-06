@@ -553,7 +553,6 @@ setInterval(
     }else{
       finalizar.setAttribute("disabled","disabled");
     }
-
 },100);
 
 
@@ -618,7 +617,7 @@ anoCaixa =  document.getElementById('datepicker').value[6] +
                 document.getElementById('datepicker').value[9];
 
       if (anoCaixa < yyyy || ( mesCaixa < mm && anoCaixa == yyyy) || ( diaCaixa <= dd && mesCaixa == mm) ){
-        // console.log("NÃO PODE SER SEU VAGABUNDO!!!");
+         // console.log("NÃO PODE SER SEU VAGABUNDO!!!");
         document.getElementById('manipuladorData').value=0;
       }else{
         // console.log("ASSIM TUDO BEM SEU VAGABUNDO!!!");
