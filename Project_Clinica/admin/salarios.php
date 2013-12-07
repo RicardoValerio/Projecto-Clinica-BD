@@ -94,6 +94,11 @@ $row = $result_set->fetch();
                       <table class="twelve">
                             <thead>
                               <tr>
+                                <th></th>
+                                <th style="text-align: center;">Salário Máximo</th>
+                                <th></th>
+                              </tr>
+                              <tr>
                                   <th style="text-align: center;">Primeiro Nome</th>
                                   <th style="text-align: center;">Último Nome</th>
                                   <th style="text-align: center;">Salário</th>
@@ -133,6 +138,11 @@ $row = $result_set->fetch();
                   <div class="panel">
                       <table class="twelve">
                             <thead>
+                              <tr>
+                                <th></th>
+                                <th style="text-align: center;">Salário Mínimo</th>
+                                <th></th>
+                              </tr>
                               <tr>
                                   <th style="text-align: center;">Primeiro Nome</th>
                                   <th style="text-align: center;">Último Nome</th>
@@ -206,7 +216,7 @@ $row = $result_set->fetch();
                             </thead>
                               <tbody>
                                       <tr>
-                                          <td style="text-align: center; vertical-align: middle;"><?php echo $row[0]; ?></td> 
+                                          <td style="text-align: center; vertical-align: middle; border:1px solid #CFB5B5; "><?php echo $row[0]; ?></td> 
                                           
                                       </tr>
                              </tbody>
