@@ -99,8 +99,20 @@ Cláusulas:
  ✔ WHERE @done (13-11-21 20:25)
  ✔ ON DELETE CASCADE ou ON UPDATE CASCADE @done (13-11-26 17:40)
  ✔ ORDER BY @done (13-11-21 20:25)
- ☐ GROUP BY
- ☐ DISTINCT  
+
+ ✔ GROUP BY @done (13-12-07 00:46)
+   
+// retorna os nomes do médicos médicos e o número de consultas marcadas que possuiem:
+
+   select medicos.primeiro_nome , medicos.ultimo_nome, count(consultas_marcadas.id) as 'Nº de Consultas Marcadas' from medicos, consultas_marcadas where consultas_marcadas.medicos_id = medicos.id group by consultas_marcadas.medicos_id;
+  
+
+ ✔ DISTINCT @done (13-12-07 00:41)
+
+// retorna de forma distincta os nomes dos médicos que estão com consultas marcadas:
+
+   select distinct medicos.primeiro_nome , medicos.ultimo_nome from medicos, consultas_marcadas where consultas_marcadas.medicos_id = medicos.id;
+
  ✔ BETWEEN @done (13-12-02 22:22)
 
 Operadores: 
@@ -118,3 +130,17 @@ Funções:
  ✔ AVG @done (13-11-26 17:33)
  ✔ MAX @done (13-11-26 17:33)
  ✔ MIN @done (13-11-26 17:33)
+
+
+// CRIAÇÃO DE UM UTILIZADOR PARA A BASE DE DADOS:
+
+   CREATE USER 'projecto_clinica'@'localhost' IDENTIFIED BY 'secret';
+
+GRANT GRANT OPTION ON *.* TO 'projecto_clinica'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'projecto_clinica'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, REFERENCES, DELETE, CREATE, DROP, ALTER, INDEX, TRIGGER, CREATE VIEW, SHOW VIEW, EXECUTE, ALTER ROUTINE, CREATE ROUTINE, CREATE TEMPORARY TABLES, LOCK TABLES, EVENT ON `projecto\_clinica`.* TO 'projecto_clinica'@'localhost';
+
+GRANT GRANT OPTION ON `projecto\_clinica`.* TO 'projecto_clinica'@'localhost';
+
