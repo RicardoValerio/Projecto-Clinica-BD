@@ -200,7 +200,7 @@ Porque a nossa vida é muito frágil, todas as opções que tomamos devem ser as
           <hr />
           <div class="row">
             <div class="six columns">
-              <p>Lisboa, 2013 | UE - Base de Dados</p>
+              <p>Lisboa, 2013 | UE - Bases de Dados</p>
             </div>
             <div class="six columns">
               <ul class="link-list right">
