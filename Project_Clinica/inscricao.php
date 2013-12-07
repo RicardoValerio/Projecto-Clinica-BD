@@ -5,7 +5,7 @@
 <!-- Neste IF, apenas vai ser processado o seu interior caso a variável global $_POST não esteja vazio -->
 <?php if (!empty($_POST)): ?>
 
-<?php 
+<?php
  
  // verifica se já existe o numero limite de consultas para uma determinada especialidade
  // numa determinada data, em determinada hora e em determinado horario
@@ -45,7 +45,6 @@ if($result_set->rowCount() == 2){
 }else{
 
     // Caso contrário ainda pode entrar registo/registos, isto é, quer dizer que a base de dados tem 0 ou 1 registo, de acordo com as condições passadas
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //  1 -  regista o utilizador na tabela utentes caso este ainda não exista, pois caso já exista, a execução da query não irá ser bem sucedida, pois não podem existir duas chaves primárias iguais. Assim, garantidamente a tabela utentes terá utentes distintos mesmo que um determinado utente marque, no futuro, mais do que uma consulta.
@@ -611,10 +610,10 @@ anoCaixa =  document.getElementById('datepicker').value[6] +
                 document.getElementById('datepicker').value[9];
 
       if (anoCaixa < yyyy || ( mesCaixa < mm && anoCaixa == yyyy) || ( diaCaixa <= dd && mesCaixa == mm) ){
-         // console.log("NÃO PODE SER SEU VAGABUNDO!!!");
+         // console.log("NÃO PODE SER!!!");
         document.getElementById('manipuladorData').value=0;
       }else{
-        // console.log("ASSIM TUDO BEM SEU VAGABUNDO!!!");
+        // console.log("ASSIM TUDO BEM!!!");
         document.getElementById('manipuladorData').value=1;
       }
 
