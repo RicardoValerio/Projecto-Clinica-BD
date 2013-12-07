@@ -4,12 +4,6 @@
 
 if (!empty($_POST)) {
   
-  // echo "<pre>"; 
-  // print_r($_POST);
-  // echo"</pre>";
-  // die();
-
-
 // switch que contém as queries para inserir os dados, passados em POST, na sua respectiva tabela passada em GET
 
        switch ($_GET['t']) {
@@ -84,9 +78,7 @@ if (!empty($_POST)) {
                   header("Location: index.php");
               }else{
                 // caso contrário redirecciona para a pagina erro.php
-                erro($_POST);
-                die();
-                  header("Location: index.php");
+                  header("Location: erro.php");
               }
 
             break;
