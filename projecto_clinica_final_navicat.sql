@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-12-03 11:39:56
+Date: 2013-12-07 00:16:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `administradores` (
 -- ----------------------------
 -- Records of administradores
 -- ----------------------------
-INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-11-28 11:20:43');
+INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-12-07 00:13:07');
 INSERT INTO `administradores` VALUES ('2', 'super', 'root', '2013-11-12 20:31:39');
 
 -- ----------------------------
@@ -81,7 +81,7 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_marcadas
@@ -91,7 +91,6 @@ INSERT INTO `consultas_marcadas` VALUES ('19', '2013-12-01 20:02:05', '12/02/201
 INSERT INTO `consultas_marcadas` VALUES ('20', '2013-12-01 20:04:04', '12/03/2013', '11:30', '10', 'ruiesteves@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('21', '2013-12-01 21:18:35', '12/03/2013', '11:30', '16', 'teresaguilherme@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('22', '2013-12-02 15:01:32', '12/03/2013', '09:30', '3', 'diogoribeiro@gmail.com');
-INSERT INTO `consultas_marcadas` VALUES ('23', '2013-12-02 15:04:01', '12/03/2013', '09:30', '5', 'alvarorocha@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('24', '2013-12-02 20:18:04', '12/17/2013', '17:30', '32', 'danielaoliveira@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('25', '2013-12-02 20:19:04', '12/15/2013', '18:30', '39', 'susanaarminda@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('26', '2013-12-02 20:20:03', '12/10/2013', '16:30', '43', 'hugosousa@gmail.com');
@@ -103,6 +102,11 @@ INSERT INTO `consultas_marcadas` VALUES ('31', '2013-12-02 20:24:34', '12/11/201
 INSERT INTO `consultas_marcadas` VALUES ('32', '2013-12-02 20:25:14', '12/11/2013', '11:00', '23', 'sofiacaramelo@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('33', '2013-12-02 21:32:49', '12/11/2013', '16:00', '27', 'juju@caetano.com');
 INSERT INTO `consultas_marcadas` VALUES ('34', '2013-12-02 22:18:49', '01/03/2014', '09:30', '3', 'pedroeustaquio@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('35', '2013-12-05 11:26:17', '12/17/2013', '18:30', '43', 'margaridapinto@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('36', '2013-12-05 11:35:34', '12/17/2013', '13:00', '38', 'hugoboss@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('37', '2013-12-05 12:04:39', '12/17/2013', '16:00', '4', 'sarajacinta@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('38', '2013-12-06 09:22:11', '12/28/2013', '17:30', '39', 'soniaalpalhao@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('39', '2013-12-06 09:27:12', '12/17/2013', '15:30', '33', 'antoniovivalvi@gmail.com');
 
 -- ----------------------------
 -- Table structure for consultas_realizadas
@@ -309,7 +313,7 @@ INSERT INTO `medicos_administracao_de_consultas` VALUES ('38', 'doctor_39', 'sec
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('39', 'doctor_40', 'secret', '2013-11-28 12:09:32', '40');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('40', 'doctor_41', 'secret', '2013-11-28 12:09:33', '41');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('41', 'doctor_42', 'secret', '2013-11-28 12:09:33', '42');
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('42', 'doctor_43', 'secret', '2013-11-28 12:09:33', '43');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('42', 'doctor_43', 'secret', '2013-12-05 11:27:20', '43');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('43', 'doctor_44', 'secret', '2013-11-28 12:09:33', '44');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('44', 'doctor_45', 'secret', '2013-11-28 12:09:33', '45');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('45', 'doctor_46', 'secret', '2013-11-28 12:09:33', '46');
@@ -358,21 +362,25 @@ CREATE TABLE `utentes` (
 -- ----------------------------
 -- Records of utentes
 -- ----------------------------
-INSERT INTO `utentes` VALUES ('alvarorocha@gmail.com', 'Álvaro', 'Rocha', 'Rua do Álvaro Rocha Nº23', '911929292', '2013-12-02 15:04:00');
+INSERT INTO `utentes` VALUES ('antoniovivalvi@gmail.com', 'Antonio', 'Vivalvi', 'Rua do António Vivaldi Nº 18', '918189718', '2013-12-06 09:27:12');
 INSERT INTO `utentes` VALUES ('danielaoliveira@gmail.com', 'Daniela', 'Oliveira', 'Rua da Daniela Oliveira Nº55', '919192929', '2013-12-02 20:18:03');
 INSERT INTO `utentes` VALUES ('diogoribeiro@gmail.com', 'Diogo', 'Ribeiro', 'Rua do Diogo Ribeiro Nº12', '912929299', '2013-12-02 15:01:31');
 INSERT INTO `utentes` VALUES ('filipatavares@gmail.com', 'Filipa', 'Tavares', 'Rua da Filipa Tavares Nº28', '926757567', '2013-12-02 20:23:13');
 INSERT INTO `utentes` VALUES ('filipeneves@gmail.com', 'Filipe', 'Neves', 'Rua do Filipe Neves Nº198', '918190819', '2013-12-02 20:20:48');
 INSERT INTO `utentes` VALUES ('guilhermeontem@gmail.com', 'Guilherme', 'Ontem', 'Rua do Guilherme Ontem Nº12', '969872888', '2013-12-02 20:24:34');
+INSERT INTO `utentes` VALUES ('hugoboss@gmail.com', 'Hugo', 'Boss', 'Rua do Hugo Boss Nº 128', '911875175', '2013-12-05 11:35:34');
 INSERT INTO `utentes` VALUES ('hugosousa@gmail.com', 'Hugo', 'Sousa', 'Rua do Hugo Sousa Nº34', '912982989', '2013-12-02 20:20:03');
 INSERT INTO `utentes` VALUES ('ivoalexandre@gmail.com', 'Ivo', 'Alexandre', 'Rua do Ivo Alexandre Nº76', '928789787', '2013-12-02 20:22:32');
 INSERT INTO `utentes` VALUES ('joseperpetuo@gmail.com', 'José', 'Perpétuo', 'Rua do José Perpétuo Nº234', '923658778', '2013-12-01 19:44:56');
 INSERT INTO `utentes` VALUES ('juju@caetano.com', 'Joana', 'Caetano', 'Rua da Joana Caetano Nº28', '912896296', '2013-12-02 21:32:49');
+INSERT INTO `utentes` VALUES ('margaridapinto@gmail.com', 'Margarida', 'Pinto', 'Rua da Margarida Pinto Nº 35', '927678678', '2013-12-05 11:26:16');
 INSERT INTO `utentes` VALUES ('pedroeustaquio@gmail.com', 'Pedro', 'Eustáquio', 'Rua do Pedro Eustáquio Nº675', '925451645', '2013-12-02 22:18:49');
 INSERT INTO `utentes` VALUES ('pedrosilva@gmail.com', 'Pedro', 'Silva', 'Rua do Pedro Silva Nº97', '912982982', '2013-12-02 20:21:45');
 INSERT INTO `utentes` VALUES ('ruiesteves@gmail.com', 'Rui', 'Esteves', 'Rua do Rui Esteves Nº28', '968728728', '2013-12-01 20:04:04');
+INSERT INTO `utentes` VALUES ('sarajacinta@gmail.com', 'Sara', 'Jacinta', 'Rua da Sara Jacinta Nº27', '911616896', '2013-12-05 12:04:39');
 INSERT INTO `utentes` VALUES ('saraneves@gmail.com', 'Sara', 'Neves', 'Rua da Sara Neves Nº231', '912233445', '2013-12-01 20:02:05');
 INSERT INTO `utentes` VALUES ('sofiacaramelo@gmail.com', 'Sofia', 'Caramelo', 'Rua da Sofia Caramelo Nº78', '917826786', '2013-12-02 20:25:14');
+INSERT INTO `utentes` VALUES ('soniaalpalhao@gmail.com', 'Sónia', 'Alpalhão', 'Rua da Sónia Alpalhão Nº 28', '968817982', '2013-12-06 09:22:11');
 INSERT INTO `utentes` VALUES ('susanaarminda@gmail.com', 'Susana', 'Arminda', 'Rua da Susana Arminda Nº90', '965498398', '2013-12-02 20:19:04');
 INSERT INTO `utentes` VALUES ('teresaguilherme@gmail.com', 'Teresa', 'Guilherme', 'Rua da Teresa Guilherme Nº76', '919816988', '2013-12-01 21:18:35');
 
