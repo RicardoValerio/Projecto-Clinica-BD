@@ -138,7 +138,7 @@ if (!empty($_POST)) {
               
                   $sql = "INSERT INTO horarios (descricao_horario) VALUES ('" . $_POST['descricao_horario'] ."')" ;
 
-// caso a query seja executada com sucesso, então:
+                  // caso a query seja executada com sucesso, então:
                   if($insert_count = $connection->exec($sql)){
                     // redirecciona o administrador para o index da pasta admin
                       header("Location: index.php");

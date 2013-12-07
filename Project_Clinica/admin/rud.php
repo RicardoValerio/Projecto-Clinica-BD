@@ -104,7 +104,7 @@
                                           
             
                                           <tbody>
-<!-- Bloco de PHP responsável toda a tabela HTML referente à tabela passado por GET -->
+<!-- Bloco de PHP referente à tabela passada por GET -->
                       <?php 
 
                       // query que retorna o nº de campos existentes na tabela passada via GET
