@@ -14,7 +14,7 @@ $row = mysql_num_rows ($sql);
 // caso seja então:
 if($row > 0) {
 	
-	// inicia uma session - consists of a way to preserve certain data across subsequent accesses.
+	// inicia uma session - consiste num mecanismo de preservar informação durante vários acesso numa sessão
 	session_start();
 	
 	// atribui à variável global $_SESSION os valores vindo de $_POST de forma a serem conservados durante a sessão
