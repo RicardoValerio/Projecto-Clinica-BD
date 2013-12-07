@@ -8,7 +8,7 @@ $password = $_POST['password'];
 // armazena o resultado da execução da query passada como argumento
 $sql = mysql_query("SELECT * FROM administradores 
 						WHERE username = '$username' 
-						and password = '$password'"
+						AND password = '$password'"
 				  ) or die (mysql_error()) ; 
 
 // atribui à variável $row, o número de rows que foram retornadas na execução do comando anterior
