@@ -101,7 +101,7 @@ $linha_result_set = $connection->query($sql)->fetch();
 
               <!-- passa para POST o nome da tabela onde se vai fazer o update-->
               <input type="hidden" name="tabela" value="<?php echo $_GET['t']; ?>">
-              <!-- pass para POST o valor da chave primária para realmente poder fazer o update -->
+              <!-- passa para POST o valor da chave primária para realmente poder fazer o update -->
               <input type="hidden" name="chave_primaria" value="<?php echo $_GET['pk']; ?>">
 
             <table class="twelve">
