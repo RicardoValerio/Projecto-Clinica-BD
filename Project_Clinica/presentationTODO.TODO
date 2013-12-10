@@ -1,0 +1,36 @@
+ OBJECTIVOS PROPOSTOS:
+
+instruções presentes na Aplicação:
+ ☐ CREATE
+ ☐ USE
+ ☐ ON DELETE CASCADE ou ON UPDATE CASCADE
+ ☐ SELECT
+ ☐ FROM
+ ☐ WHERE
+ ☐ INSERT
+ ☐ JOIN
+ ☐ AND
+ ☐ NOT
+ ☐ IN
+ ☐ UMA VEZ SUBCONSULTAS
+ ☐ COUNT
+ ☐ UPDATE
+ ☐ DELETE
+ ☐ MAX
+ ☐ MIN
+ ☐ AVG
+ ☐ SUM
+ ☐ ORDER BY
+ 
+ outras instruções presentes em VIEWS:
+
+ ☐ VISTAS
+ ☐ ALTER
+ ☐ UNION
+ ☐ BETWEEN
+ ☐ LIKE
+ ☐ GROUP BY
+ ☐ DISTINCT
+ ☐ DROP
+ ☐ OR
+
