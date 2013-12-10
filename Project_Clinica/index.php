@@ -76,8 +76,8 @@
         <div class="twelve columns">
           <div id="slider">
             <img src="images/slide1.jpg" width="1000" height="400" />
-            <img src="http://www.flag.pt/orbit/img/orbit_webmobile.jpg" width="1000" height="400" />
-            <img src="http://www.flag.pt/orbit/img/site1.jpg" width="1000" height="400" />
+            <img src="images/slide2.jpg" width="1000" height="400" />
+            <img src="images/slide3.jpg" width="1000" height="400" />
           </div>
           
           <hr />
@@ -127,17 +127,17 @@ Porque a nossa vida é muito frágil, todas as opções que tomamos devem ser as
       <div class="row">
       
         <div class="four columns">
-          <a href="#" class="th"><img style="margin: 10px auto;" src="images/QrCode/email.png" /></a>
+          <a href="#" class="th"><img style="margin: 10px auto;" src="images/1.jpg" /></a>
           
         </div>
         
         <div class="four columns">
-          <a href="#" class="th"><img style="margin: 10px auto;" src="images/QrCode/email.png" /></a>
+          <a href="#" class="th"><img style="margin: 10px auto;" src="images/2.jpg" /></a>
           
         </div>
         
         <div class="four columns">
-          <a href="#" class="th"><img style="margin: 10px auto;" src="images/QrCode/email.png" /></a>
+          <a href="#" class="th"><img style="margin: 10px auto;" src="images/3.jpg" /></a>
           
         </div>
         
@@ -152,12 +152,12 @@ Porque a nossa vida é muito frágil, todas as opções que tomamos devem ser as
           <br>
             <h4 style="text-align: left;">Testemunhos:</h4>
             <ul class="testemunhos">
-             <li><img src="images/testemunhos/tadeufinal.png" class="has-tip" data-width="120" title='Tadeu Bento: <br><br> "Foi o melhor curso da minha vida!"' alt="Tadeu Bento"></li>
-             <li><img src="images/testemunhos/raquelfinal.png" class="has-tip" data-width="120" title='Raquel Prata: <br><br> "Foi o melhor curso da minha vida!"' alt="Raquel Prata"></li>
-             <li><img src="images/testemunhos/fabiofinal.png" class="has-tip" data-width="120" title='Fábio Cartaxo: <br><br> "Foi o melhor curso da minha vida!"' alt="Fábio Cartaxo"></li>
-             <li><img src="images/testemunhos/andrefinal.png" class="has-tip" data-width="120" title='André Martinho: <br><br> "Foi o melhor curso da minha vida!"' alt="André Martinho"></li>
-             <li><img src="images/testemunhos/giuliafinal.png" class="has-tip" data-width="120" title='Giulia Pizzignacco: <br><br> "Foi o melhor curso da minha vida!"' alt="Giulia Pizzignacco"></li>
-             <li><img src="images/testemunhos/rivalefinal.png" class="has-tip" data-width="120" title='Ricardo Valério: <br><br> <span class="text-center">"Foi o melhor curso da minha vida!"' alt="Ricardo Valério"></li>
+             <li><img src="images/testemunhos/1.jpg" class="has-tip" data-width="120" title='Ana Jacinta: <br><br> "Foi a melhor clínica onde estive!"' alt="Tadeu Bento"></li>
+             <li><img src="images/testemunhos/2.jpg" class="has-tip" data-width="120" title='Rui Prata: <br><br> "Foi a melhor clínica onde estive!"' alt="Raquel Prata"></li>
+             <li><img src="images/testemunhos/3.jpg" class="has-tip" data-width="120" title='Fábiana Cartaxo: <br><br> "Foi a melhor clínica onde estive!"' alt="Fábio Cartaxo"></li>
+             <li><img src="images/testemunhos/4.jpg" class="has-tip" data-width="120" title='Andreia Martinho: <br><br> "Foi a melhor clínica onde estive!"' alt="André Martinho"></li>
+             <li><img src="images/testemunhos/5.jpg" class="has-tip" data-width="120" title='Giulia Pizzignacco: <br><br> "Foi a melhor clínica onde estive!"' alt="Giulia Pizzignacco"></li>
+             <li><img src="images/testemunhos/6.jpg" class="has-tip" data-width="120" title='Filipa Coimbra: <br><br> <span class="text-center">"Foi a melhor clínica onde estive!"' alt="Ricardo Valério"></li>
             </ul>
         </div>
       </div>

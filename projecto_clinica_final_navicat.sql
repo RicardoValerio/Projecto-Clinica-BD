@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2013-12-07 00:16:07
+Date: 2013-12-10 12:48:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -62,7 +62,7 @@ CREATE TABLE `administradores` (
 -- ----------------------------
 -- Records of administradores
 -- ----------------------------
-INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-12-07 00:13:07');
+INSERT INTO `administradores` VALUES ('1', 'admin', 'pass', '2013-12-10 12:47:04');
 INSERT INTO `administradores` VALUES ('2', 'super', 'root', '2013-11-12 20:31:39');
 
 -- ----------------------------
@@ -81,7 +81,7 @@ CREATE TABLE `consultas_marcadas` (
   KEY `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1_idx` (`utentes_email`),
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_medicos1` FOREIGN KEY (`medicos_id`) REFERENCES `medicos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_consultas_com_marcacao_confirmada_a_realizar_utentes1` FOREIGN KEY (`utentes_email`) REFERENCES `utentes` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of consultas_marcadas
@@ -107,6 +107,7 @@ INSERT INTO `consultas_marcadas` VALUES ('36', '2013-12-05 11:35:34', '12/17/201
 INSERT INTO `consultas_marcadas` VALUES ('37', '2013-12-05 12:04:39', '12/17/2013', '16:00', '4', 'sarajacinta@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('38', '2013-12-06 09:22:11', '12/28/2013', '17:30', '39', 'soniaalpalhao@gmail.com');
 INSERT INTO `consultas_marcadas` VALUES ('39', '2013-12-06 09:27:12', '12/17/2013', '15:30', '33', 'antoniovivalvi@gmail.com');
+INSERT INTO `consultas_marcadas` VALUES ('40', '2013-12-10 12:46:56', '12/19/2013', '11:30', '30', 'dudanorberta@gmail.com');
 
 -- ----------------------------
 -- Table structure for consultas_realizadas
@@ -272,7 +273,7 @@ CREATE TABLE `medicos_administracao_de_consultas` (
 -- ----------------------------
 -- Records of medicos_administracao_de_consultas
 -- ----------------------------
-INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor_1', 'secret', '2013-11-28 16:40:51', '1');
+INSERT INTO `medicos_administracao_de_consultas` VALUES ('1', 'doctor_1', 'secret', '2013-12-08 14:21:57', '1');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('2', 'doctor_2', 'secret', '2013-11-28 12:09:31', '2');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('3', 'doctor_3', 'secret', '2013-12-02 14:58:53', '3');
 INSERT INTO `medicos_administracao_de_consultas` VALUES ('4', 'doctor_4', 'secret', '2013-12-02 14:59:16', '4');
@@ -336,7 +337,7 @@ CREATE TABLE `questoes_online` (
   `mensagem` text COLLATE utf8_unicode_ci NOT NULL,
   `datetime_questao` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of questoes_online
@@ -344,6 +345,7 @@ CREATE TABLE `questoes_online` (
 INSERT INTO `questoes_online` VALUES ('1', 'Joana Caetano', 'juju@caetano.com', 'Porque é que o nosso planeta se chama terra e não água?', '2013-11-11 22:22:46');
 INSERT INTO `questoes_online` VALUES ('5', 'Pedro Fonseca', 'pedro@fonseca.com', 'Qual o tamanho do Universo?', '2013-11-15 22:02:57');
 INSERT INTO `questoes_online` VALUES ('6', 'Francisco Costa', 'frxp@costa.com', 'Reparei no que fazem com as laranjas,.. se eu levar uma vaca, tiram-lhe o leite?', '2013-12-01 21:09:05');
+INSERT INTO `questoes_online` VALUES ('7', 'Daniela Pereira', 'daniela@pereira.com', 'Mudem o nome da vossa clínica por favor...', '2013-12-07 15:59:20');
 
 -- ----------------------------
 -- Table structure for utentes
@@ -365,6 +367,7 @@ CREATE TABLE `utentes` (
 INSERT INTO `utentes` VALUES ('antoniovivalvi@gmail.com', 'Antonio', 'Vivalvi', 'Rua do António Vivaldi Nº 18', '918189718', '2013-12-06 09:27:12');
 INSERT INTO `utentes` VALUES ('danielaoliveira@gmail.com', 'Daniela', 'Oliveira', 'Rua da Daniela Oliveira Nº55', '919192929', '2013-12-02 20:18:03');
 INSERT INTO `utentes` VALUES ('diogoribeiro@gmail.com', 'Diogo', 'Ribeiro', 'Rua do Diogo Ribeiro Nº12', '912929299', '2013-12-02 15:01:31');
+INSERT INTO `utentes` VALUES ('dudanorberta@gmail.com', 'Duda', 'Norberta', 'Rua da Duda Norberta Nº238', '918276278', '2013-12-10 12:46:56');
 INSERT INTO `utentes` VALUES ('filipatavares@gmail.com', 'Filipa', 'Tavares', 'Rua da Filipa Tavares Nº28', '926757567', '2013-12-02 20:23:13');
 INSERT INTO `utentes` VALUES ('filipeneves@gmail.com', 'Filipe', 'Neves', 'Rua do Filipe Neves Nº198', '918190819', '2013-12-02 20:20:48');
 INSERT INTO `utentes` VALUES ('guilhermeontem@gmail.com', 'Guilherme', 'Ontem', 'Rua do Guilherme Ontem Nº12', '969872888', '2013-12-02 20:24:34');
@@ -427,6 +430,18 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- ----------------------------
 DROP VIEW IF EXISTS `view_historico_consultas_realizadas`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_historico_consultas_realizadas` AS select `consultas_realizadas`.`id` AS `id`,`consultas_realizadas`.`datetime_consulta_realizada` AS `datetime_consulta_realizada`,`consultas_realizadas`.`valor_consulta` AS `valor_consulta`,`consultas_realizadas`.`diagnostico` AS `diagnostico`,`consultas_realizadas`.`prescricao` AS `prescricao`,`consultas_realizadas`.`medicos_id` AS `medicos_id`,`especialidades`.`especialidade` AS `especialidade`,`horarios`.`descricao_horario` AS `descricao_horario`,`consultas_realizadas`.`utentes_email` AS `utentes_email` from (((`consultas_realizadas` join `medicos`) join `especialidades`) join `horarios`) where ((`medicos`.`id` = `consultas_realizadas`.`medicos_id`) and (`horarios`.`id` = `medicos`.`horarios_id`) and (`especialidades`.`id` = `medicos`.`especialidades_id`)) order by `consultas_realizadas`.`datetime_consulta_realizada` desc ;
+
+-- ----------------------------
+-- View structure for view_medicos_num_consultas
+-- ----------------------------
+DROP VIEW IF EXISTS `view_medicos_num_consultas`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_medicos_num_consultas` AS select `medicos`.`primeiro_nome` AS `primeiro_nome`,`medicos`.`ultimo_nome` AS `ultimo_nome`,count(`consultas_marcadas`.`id`) AS `Nº de Consultas Marcadas` from (`medicos` join `consultas_marcadas`) where (`consultas_marcadas`.`medicos_id` = `medicos`.`id`) group by `consultas_marcadas`.`medicos_id` ;
+
+-- ----------------------------
+-- View structure for view_nome_medicos_consultas_marcadas
+-- ----------------------------
+DROP VIEW IF EXISTS `view_nome_medicos_consultas_marcadas`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_nome_medicos_consultas_marcadas` AS select distinct `medicos`.`primeiro_nome` AS `primeiro_nome`,`medicos`.`ultimo_nome` AS `ultimo_nome` from (`medicos` join `consultas_marcadas`) where (`consultas_marcadas`.`medicos_id` = `medicos`.`id`) ;
 
 -- ----------------------------
 -- View structure for view_telemoveis_96

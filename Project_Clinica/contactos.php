@@ -120,7 +120,7 @@ $insert_bool = false;
     
         <!-- Clicking this placeholder fires the mapModal Reveal modal -->
         <p>
-          <a href="" data-reveal-id="mapModal"><img src="images/QrCode/email.png" /></a><br />
+          <a href="" data-reveal-id="mapModal"><img src="images/mapa-bd.jpg" /></a><br />
           <a href="http://maps.google.pt/maps" target="_blank">Ver mapa</a>
         </p>
     
@@ -174,7 +174,7 @@ $insert_bool = false;
     
     <div class="reveal-modal" id="mapModal">
       <h4>Onde Estamos:</h4>
-      <p style="text-align:center;"><img src="images/QrCode/email.png" /></p>
+      <p style="text-align:center;"><img src="images/mapa-bd.jpg" /></p>
     <p style="text-align:center;">Sediada na Rua do Paradoxo nº236 .
 </p>
       <!-- Any anchor with this class will close the modal. This also inherits certain styles, which can be overriden. -->
