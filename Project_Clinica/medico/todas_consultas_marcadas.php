@@ -80,23 +80,19 @@
     
 
     <tr>
-      <?php 
-          
-          $sql = 'DESCRIBE consultas_marcadas';
-          
-          if ($result_set = $connection->query($sql)) {
-          foreach ($result_set as $coluna) {    
+        <?php 
+            $sql = 'DESCRIBE consultas_marcadas';
           ?>
+
+          <?php if ($result_set = $connection->query($sql)): ?>
+            <?php foreach ($result_set as $coluna): ?>
               <th><?php echo $coluna[0]; ?></th>
       
-         <?php 
-          }    
-         }
-         ?>
+            <?php endforeach ?>
+          <?php endif ?>
           </tr>
         </thead>
   <tbody>
-    
           <?php 
         
         $sql = "SELECT * 
@@ -105,10 +101,11 @@
                                     FROM medicos_administracao_de_consultas 
                                     WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] . "')
                   ORDER BY str_to_date(data_consulta, '%m/%d/%Y') ASC, hora_consulta ASC";
-      
-            if ($result_set = $connection->query($sql)) {
-            foreach ($result_set as $coluna){ 
             ?>
+            
+        <?php if ($result_set = $connection->query($sql)): ?>
+          <?php foreach ($result_set as $coluna): ?>
+            
                 <tr>
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[0]; ?></td>   
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[1]; ?></td>   
@@ -118,11 +115,8 @@
                   <td style="text-align: center; vertical-align: middle;"><?php echo $coluna[5]; ?></td>
                 </tr>
                      
-          <?php 
-             }
-          }
-          ?>
-
+          <?php endforeach ?>
+        <?php endif ?>
 
   </tbody>
 </table>
