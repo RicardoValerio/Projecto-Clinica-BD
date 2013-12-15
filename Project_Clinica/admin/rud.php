@@ -72,7 +72,7 @@
             <h2 style="text-align: center;">Welcome Admin <span style="color:red;"><?php echo $_SESSION['username']; ?></span></h2>
           </div>
                                                                                                     <!-- escreve o nome da tabela que está a ser passada por GET -->
-            <h2 style="text-align: left;">R.U.D on Table <span style="font-size: 22px; color:green;"><?php echo $_GET['t']; ?></span></span></h2>
+            <h2 style="text-align: left;">R.U.D na Tabela <span style="font-size: 22px; color:green;"><?php echo $_GET['t']; ?></span></span></h2>
         </div>
       </div>
 
