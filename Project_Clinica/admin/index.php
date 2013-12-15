@@ -88,7 +88,20 @@
 
                      <?php if ($result_set = $connection->query($sql)): ?>
                            <?php foreach ($result_set as $coluna): ?>
-                       
+
+                                    <?php if (
+                                      $coluna[0] == "view_consultas_do_mes_currente" || 
+                                      $coluna[0] == "view_consultas_marcadas" || 
+                                      $coluna[0] == "view_emails_web_marketing" || 
+                                      $coluna[0] == "view_historico_consultas_realizadas" || 
+                                      $coluna[0] == "view_medicos_num_consultas" || 
+                                      $coluna[0] == "view_nome_medicos_consultas_marcadas" || 
+                                      $coluna[0] == "view_preco_maior_ou_igual_40" || 
+                                      $coluna[0] == "view_telemoveis_96" 
+                                      ) 
+                                      continue;
+                                    ?>
+                                      
                             <li class="has-flyout">
 
                                   <a href="#"><?php echo $coluna[0]; ?></a>
