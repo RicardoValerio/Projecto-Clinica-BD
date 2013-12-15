@@ -88,7 +88,7 @@
       
       <div class="row">
 
-<!-- Bloco de PHP responsável por colocar todas as fotos inerentes às empresas que possuem acordo coma clínica, que estão armazenadas na base de dados -->
+<!-- Bloco de PHP responsável por colocar todas as fotos inerentes às empresas que possuem acordo com a clínica, que estão armazenadas na base de dados -->
             <?php 
             
             $sql = 'SELECT instituicao, foto_instituicao FROM acordos';
@@ -101,7 +101,7 @@
                     <!-- coloca o nome de cada instituição -->
                     <h6 style="text-align:center;"><?php echo ucwords($coluna['instituicao']); ?></h6>
                     <!-- coloca a foto de cada instituição -->
-                    <img src="images/acordos/<?php echo $coluna['foto_instituicao']; ?>" alt="<?php echo $coluna['instituicao']; ?>">
+                    <img src="images/acordos/<?php echo $coluna['foto_instituicao']; ?>" alt="acordos porreiros pah.">
                   </div>
 
               <?php endforeach ?>

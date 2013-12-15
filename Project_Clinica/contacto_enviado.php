@@ -1,29 +1,3 @@
-<?php 
-
-require 'MODEL/databaseConnection.php';
-  
-// variavel booleana inicializada a false para que, se no caso de não tiver sido submetido o formulário na página, seja disposto o mesmo.
-// esta variável vai funcionar essencialmente como um switch onde irá permitir dispor o conteúdo correcto na página em função do conteúdo dentro da variável global $_POST
-$insert_bool = false;
-
-// verifica se o array global que armazena os valores passados por POST não está vazio.
-// Se não está vazio, nesse caso:
-  if (!empty($_POST)) {
-       
-       // armazena a query a executar
-      $sql = "INSERT INTO questoes_online (nome, email, mensagem, datetime_questao) 
-              VALUES ('". $_POST['nome'] ."', '". $_POST['email'] ."', '". $_POST['questao'] ."', NOW() ) ";
-
-        // executa a query e verifica o valor booleano retornado da sua execução.
-              // se for executado com sucesso então:
-        if($connection->exec($sql)){
-          // altera a variável criada no topo do ficheiro para o estado booleano oposto, ou seja, true
-          $insert_bool = true;
-        }
-  }
-
-
- ?>
 
 <!DOCTYPE html>
 
@@ -102,7 +76,7 @@ $insert_bool = false;
 
       
               <div class="nine columns" id="m">
-                <h3>Obrigado...</h3>
+                <h3 style="color:green;">Obrigado...</h3>
                 <p>Entraremos em contacto consigo brevemente... </p>
               </div>
       
