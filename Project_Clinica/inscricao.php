@@ -501,7 +501,7 @@ UNome.onblur=function() {
 
 // VERIFICAR MORADA
 var Morada=document.getElementById('Morada_formulario');
-var checar_morada=/^([A-Z,a-z,0-9, ,.,ã,á,à,â,Á,À,ê,í,ú,Ç,ç,õ,ó,é,ü,º,ª,-]){2,130}$/;
+var checar_morada=/^([A-Z,a-z,0-9, ,.,ã,á,à,â,Á,Â,À,ê,í,ú,Ç,ç,õ,ó,é,ü,º,ª,-]){2,130}$/;
 
 Morada.onblur=function() {
   if(!checar_morada.test(Morada.value)){
