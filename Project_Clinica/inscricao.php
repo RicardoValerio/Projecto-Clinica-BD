@@ -81,7 +81,7 @@ if($result_set->rowCount() == 2){
     $sql_id_medico_disponivel = "SELECT medicos.id 
                                   FROM medicos 
                                   WHERE medicos.id NOT IN 
-                                  ( SELECT DISTINCT medicos.id 
+                                  ( SELECT medicos_id 
                                     FROM medicos, consultas_marcadas 
                                     WHERE medicos.especialidades_id = ". $_POST['especialidade'] ."
                                      AND medicos.horarios_id = ". $_POST['horario'] ."
