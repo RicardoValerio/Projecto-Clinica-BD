@@ -86,6 +86,7 @@ if($result_set->rowCount() == 2){
                                     WHERE medicos.especialidades_id = ". $_POST['especialidade'] ."
                                      AND medicos.horarios_id = ". $_POST['horario'] ."
                                      AND consultas_marcadas.data_consulta='". $_POST['data'] ."'
+                                     AND consultas_marcadas.hora_consulta = '". $_POST['horas'] ."'
                                    )
                                   AND medicos.especialidades_id = ". $_POST['especialidade'] ." 
                                   AND medicos.horarios_id = ". $_POST['horario'];
