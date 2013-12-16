@@ -103,7 +103,7 @@
                                       FROM medicos_administracao_de_consultas 
                                       WHERE medicos_administracao_de_consultas.username = '". $_SESSION['username'] ."'
                                     )
-                ORDER BY datetime_consulta_realizada DESC";
+                ORDER BY datetime_consulta_realizada DESC, id DESC";
       ?>
           <!-- ciclo para colocar todas os registos de consultas realizadas do médico que está em sessão -->
         <?php if ($result_set = $connection->query($sql)): ?>
