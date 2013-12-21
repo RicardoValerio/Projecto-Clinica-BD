@@ -18,7 +18,6 @@
   <!-- Included CSS Files (Uncompressed) -->
   
   <link rel="stylesheet" href="stylesheets/foundation.css">
-  
   <!-- FONTES GOOGLE
   ================================================== -->
   <link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
